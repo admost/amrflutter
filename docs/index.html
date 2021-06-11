@@ -74,7 +74,7 @@
     <div class="banner auto-size" style="background-color: #0175C2">
             <div class="container text-white">
                 <h1><i class="flutter-icon"></i>&nbsp; &nbsp;Flutter Integration Guide</h1>
-                <h5>TThis is the easiest way to implement AMR Flutter SDK and ad networks to your current Mobile App. </h5>
+                <h5>This is the easiest way to implement AMR Flutter SDK and ad networks to your current Mobile App. </h5>
             </div>
         </div>
         <!-- END Banner -->
@@ -142,7 +142,7 @@
                         <li><a href="#adjustintegration">Adjust Integration </a></li>
                         <li><a href="#appsflyerintegration">AppsFlyer Integration </a></li>
                         <li><a href="#privacycheck">Privacy Consent Required </a></li>
-                        <li><a href="#appprivacy">Apple App Privacy </a></li>
+                        <li><a href="#appprivacy">Apple App Privacy (IOS Only) </a></li>
                     </ul>
                 </li>
             </ul>
@@ -155,6 +155,8 @@
             <section>
                 <h2 id="prerequisites">Prerequisites</h2>
                 <ul>
+                    <li>Flutter 2 or later.</li>
+                    <li>Xcode 12.5 or later.</li>
                     <li>iOS 9 or later.</li>
                     <li>Android 4.0 (Ice Cream Sandwich - API Version 14) or later.</li>
                     <li>Enable AndroidX in your project. <a href="https://developer.android.com/jetpack/androidx/migrate" target="_blank">For more information</a>.</li>
@@ -163,13 +165,19 @@
                 </ul>
 
                 <p>For testing you can use following Ids;</p>
-
+<h5>IOS Test Ids</h5>
                 <pre><code class="language-markup">
-Application Id: @"15066ddc-9c18-492c-8185-bea7e4c7f88c"
-Banner Zone Id: @"b4009772-de04-42c4-bbaa-c18da9e4a1ab"
-Interstitial Zone Id: @"39f74377-5682-436a-9338-9d1c4df410bd"
-RewardedVideo Zone Id: @"2bdefd44-5269-4cbc-b93a-373b74a2f067"
-Offerwall Zone Id: @"1cadca08-33f9-4da7-969e-ef116d4e7d0e"
+Application Id: "15066ddc-9c18-492c-8185-bea7e4c7f88c"
+Banner Zone Id: "b4009772-de04-42c4-bbaa-c18da9e4a1ab"
+Interstitial Zone Id: "39f74377-5682-436a-9338-9d1c4df410bd"
+RewardedVideo Zone Id: "2bdefd44-5269-4cbc-b93a-373b74a2f067"
+                </code></pre>
+                <h5>Android Test Ids</h5>
+                <pre><code class="language-markup">
+Application Id: "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe"
+Banner Zone Id: "9fb970db-7d96-4ef2-ac8c-d88ec22270ff"
+Interstitial Zone Id: "f99e409b-f9ab-4a2e-aa9a-4d143e6809ae"
+RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
                 </code></pre>
             </section>
             <section>
@@ -1068,9 +1076,9 @@ Admost.initialize(
     appId: Platform.isIOS
         ? "15066ddc-9c18-492c-8185-bea7e4c7f88c"
         : "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe",
-    userConsent: "1",
-    subjectToGDPR: "1",
-    subjectToCCPA: "0");
+    userConsent: "&lt;your_userConsent_value&gt;",
+    subjectToGDPR: "&lt;your_subjectToGDPR_value&gt;",
+    subjectToCCPA: "&lt;your_subjectToCCPA_value&gt;");
 }
                 </code></pre>
 
@@ -1128,10 +1136,10 @@ AdmostBanner(
     adSize: AdmostBannerSize.LEADERBOARD,
     listener: (AdmostAdEvent event, Map<String, dynamic> args) {
         if (event == AdmostAdEvent.loaded) {
-            print("ADMOST Ad Loaded");
+            // It indicates that the banner ad is loaded.
         }
         if (event == AdmostAdEvent.clicked) {
-            print("ADMOST Ad clicked");
+            // It indicates that the banner ad is clicked.
         }
         if (event == AdmostAdEvent.failedToLoad) {
             print("Error code: ${args['errorCode']}");
@@ -1166,10 +1174,10 @@ AdmostBanner(
     ...
     listener: (AdmostAdEvent event, Map<String, dynamic> args) {
         if (event == AdmostAdEvent.loaded) {
-            print("ADMOST Ad Loaded");
+            // It indicates that the banner ad is loaded.
         }
         if (event == AdmostAdEvent.clicked) {
-            print("ADMOST Ad clicked");
+            // It indicates that the banner ad is clicked.
         }
         if (event == AdmostAdEvent.failedToLoad) {
             print("Error code: ${args['errorCode']}");
@@ -1184,14 +1192,14 @@ AdmostBanner(
 
                 <pre><code class="language-dart"> 
 if (event == AdmostAdEvent.loaded) {
-    print("ADMOST Ad Loaded");
+    // It indicates that the Banner ad is loaded.
 }     </code></pre>
 
                  <code>clicked</code> state is returned when banner clicked.</p>
 
                 <pre><code class="language-dart"> 
 if (event == AdmostAdEvent.clicked) {
-    print("ADMOST Ad clicked");
+    // It indicates that the banner ad is clicked.
 }  
                  </code></pre>
                  <p>If <code>failedToLoad</code> state is returned investigate error to adress the problem.
@@ -1238,13 +1246,15 @@ AdmostNativeAd(
     xibNameForIOS: 'CustomNative200x200',
     listener: (AdmostAdEvent event, Map<String, dynamic> args) {
         if (event == AdmostAdEvent.loaded) {
-        print("ADMOST Native Ad Loaded");
+            // It indicates that the banner ad is loaded.
         }
         if (event == AdmostAdEvent.clicked) {
-        print("ADMOST Ad clicked");
+            // It indicates that the banner ad is clicked.
         }
         if (event == AdmostAdEvent.failedToLoad) {
-        print("Error code: ${args['errorCode']}");
+            // Ad is not loaded and can not be shown.
+            print("Error code: ${args['errorCode']}");
+            print("Error message: ${args['errorMessage']}");
         }
     },
 )
@@ -1402,7 +1412,7 @@ AdmostFLTNativeAdBinder.getInstance().binder = binder;
                     file and declare an <code>AdmostInterstitial</code> object;
                 </p>
 
-                <pre><code class="language-csharp">
+                <pre><code class="language-dart">
 import 'package:admost_flutter_plugin/admost.dart';
 import 'package:admost_flutter_plugin/admost_interstitial.dart';
 .
@@ -1449,28 +1459,28 @@ AdmostInterstitial(
         : 'f99e409b-f9ab-4a2e-aa9a-4d143e6809ae',
     listener: (AdmostAdEvent event, Map<String, dynamic> args) {
         if (event == AdmostAdEvent.loaded) {
-            print("loaded");
-            print("ADMOST Interstitial network: ${args['network']}");
-            print("ADMOST Interstitial ecpm: ${args['ecpm']}");
+            // It indicates that the interstitial ad is loaded and ready to show.
+            print("Interstitial network: ${args['network']}");
+            print("Interstitial ecpm: ${args['ecpm']}");
         }
         if (event == AdmostAdEvent.opened) {
-            print("opened");
+            // It indicates that the interstitial ad is showed.
         }
         if (event == AdmostAdEvent.clicked) {
-            print("clicked");
+            // It indicates that the interstitial ad is clicked.
         }
         if (event == AdmostAdEvent.failedToLoad) {
-            print("failedToLoad");
+            // It indicates that the interstitial ad received no-fill response from all of its placements.
             print("Error code: ${args['errorCode']}");
             print("Error message: ${args['errorMessage']}");
         }
         if (event == AdmostAdEvent.failedToShow) {
-            print("failedToShow");
+            // Indicates that the interstitial ad was received but there was a problem while it was showing.
             print("Error code: ${args['errorCode']}");
             print("Error message: ${args['errorMessage']}");
         }
         if (event == AdmostAdEvent.dismissed) {
-            print("dismissed");
+            // It indicates that the interstitial ad is dismissed. 
         }
         
     },
@@ -1497,7 +1507,6 @@ AdmostInterstitial(
                 </p>
 
                 <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
-    print("failedToLoad");
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
@@ -1505,7 +1514,6 @@ AdmostInterstitial(
     This delegate expected to be returned very rarely but if it is returned you should either load another interstitial or resume tasks.
     </p>
                 <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
-    print("failedToShow");
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
@@ -1513,14 +1521,14 @@ AdmostInterstitial(
 
                 <p><code>opened</code> state is returned to inform the application that the received interstital is shown.</p>
                 <pre><code class="language-markup"> if (event == AdmostAdEvent.opened) {
-    print("opened");
+    // It indicates that the interstitial ad is showed.
 }</code></pre>
 
 
                <code>clicked</code> state is returned when interstital clicked.</p>
 
                 <pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
-    print("clicked");
+    // Interstitial Ad clicked. 
     print("Network: ${args['network']}");
 }</code></pre>
                 
@@ -1532,7 +1540,7 @@ AdmostInterstitial(
                     You can use <code>dismissed</code> callback and reload a interstitial ad.
                 </p>
                 <pre><code class="language-dart">if (event == AdmostAdEvent.dismissed) {
-    print("dismissed");
+    // Interstitial Ad dismissed. 
 }</code></pre>
 
                 <h3 id="rewarded-video-ads">Rewarded Video Ads</h3>
@@ -1571,9 +1579,11 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
                 rewardedText;
               });
             } else if (event == AdmostAdEvent.failedToLoad) {
-              print("failedToLoad");
+                // It indicates that the interstitial ad received no-fill response from all of its placements.
+                print("Error code: ${args['errorCode']}");
+                print("Error message: ${args['errorMessage']}");
             } else if (event == AdmostAdEvent.completed) {
-              print("REWARDED");
+                // It indicates that the user deserves to receive a reward. You may need to store this information in a variable and give a reward
             }
           },
         );
@@ -1606,24 +1616,24 @@ AdmostRewarded(
         : '88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140',
     listener: (AdmostAdEvent event, Map<String, dynamic> args) {
         if (event == AdmostAdEvent.loaded) {
-            print("ADMOST Rewarded network: ${args['network']}");
-            print("ADMOST Rewarded ecpm: ${args['ecpm']}");
+            print("Rewarded network: ${args['network']}");
+            print("Rewarded ecpm: ${args['ecpm']}");
         } else if (event == AdmostAdEvent.dismissed) {
-            print(dismissed);
+            // It indicates that the rewarded ad is dismissed. 
         } else if (event == AdmostAdEvent.failedToLoad) {
-            print("ADMOST Rewarded failedToLoad");
-            print("ADMOST Rewarded Error code: ${args['errorCode']}");
-            print("ADMOST Rewarded Error description: ${args['errorMessage']}");
+            // It indicates that the rewarded ad received no-fill response from all of its placements.
+            print("Error code: ${args['errorCode']}");
+            print("Error message: ${args['errorMessage']}");
         } else if (event == AdmostAdEvent.failedToShow) {
-            print("ADMOST Rewarded failedToShow");
-            print("ADMOST Rewarded Error code: ${args['errorCode']}");
-            print("ADMOST Rewarded Error description: ${args['errorMessage']}");
+            // Indicates that the rewarded ad was received but there was a problem while it was showing.
+            print("Error code: ${args['errorCode']}");
+            print("Error message: ${args['errorMessage']}");
         } else if (event == AdmostAdEvent.clicked) {
-            print("clicked");
+            // It indicates that the rewarded ad clicked.
         } else if (event == AdmostAdEvent.opened) {
-            print("ADMOST Rewarded Opened");
+            // It indicates that the rewarded ad is showed.
         } else if (event == AdmostAdEvent.completed) {
-            print("REWARDED");
+            // It indicates that the user deserves to receive a reward. You may need to store this information in a variable and give a reward
         }
     },
 );
@@ -1648,21 +1658,21 @@ AdmostRewarded(
                 </p>
 
                 <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
-    print("failedToLoad");
+    // It indicates that the rewarded ad received no-fill response from all of its placements.
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
 
 <p><code>opened</code> state is returned to inform the application that the received rewarded video is shown.</p>
                 <pre><code class="language-markup"> if (event == AdmostAdEvent.opened) {
-    print("opened");
+    // It indicates that the rewarded ad is showed.
 }</code></pre>
 
 <p><code>failedToShow</code> event state is returned to inform the application that the received rewarded video failed to be shown.
     This delegate expected to be returned very rarely but if it is returned you should either load another reward video or resume tasks.
     </p>
                 <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
-    print("failedToShow");
+    // Indicates that the rewarded ad was received but there was a problem while it was showing.
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
@@ -1670,8 +1680,8 @@ AdmostRewarded(
 <p><code>clicked</code> state is returned when rewarded video clicked.</p>
 
 <pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
-print("clicked");
-print("Network: ${args['network']}");
+    // It indicates that the rewarded ad clicked.
+    print("Network: ${args['network']}");
 }</code></pre>
 
 
@@ -1684,6 +1694,7 @@ print("Network: ${args['network']}");
 </p>
 
 <pre><code class="language-dart">if (event == AdmostAdEvent.completed) {
+    // It indicates that the user deserves to receive a reward. You may need to store this information in a variable and give a reward
     player.reward();
   }
 </code></pre>
@@ -1839,7 +1850,7 @@ var privacyConsentStatus = await Admost.isPrivacyConsentRequired;
                 </code></pre>
 
                
-                <h3 id="appprivacy">Apple App Privacy </h3>
+                <h3 id="appprivacy">Apple App Privacy (IOS Only)</h3>
 
                 <p>                
 Starting December 8, 2020, Apple has announced a privacy disclosure for the App Store, You must define which data are collected by your apps and any SDKs you have integrated. To improve the performance of AdMost, the AMRSDK may collect following information from your apps:
