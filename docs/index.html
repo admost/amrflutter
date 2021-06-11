@@ -1224,12 +1224,12 @@ if (event == AdmostAdEvent.clicked) {
 
   <p>After creating your native xib file on the iOS side, then declare your banner with <code>AdmostNativeAd</code>.
      You must pass the <code>xibNameForIOS:</code> parameter. </p>
-  <pre><code class="language-objectivec">
+  <pre><code class="language-dart">
    
         xibNameForIOS: 'CustomNative200x200',
      
 </code></pre>
-	<pre><code class="language-objectivec">
+	<pre><code class="language-dart">
 AdmostNativeAd(
     adUnitId: Platform.isIOS
         ? 'c72a4a52-23c5-4c34-9eb1-7bbc4c08c7e4'
@@ -1482,7 +1482,7 @@ AdmostInterstitial(
                     When <code>isLoaded</code> is <code>true</code> just call the <code>.show()</code>
                     method to present interstitial.</p>
 
-                <pre><code class="language-objectivec">  if (await interstitialAd.isLoaded) {
+                <pre><code class="language-dart">  if (await interstitialAd.isLoaded) {
     interstitialAd.show();
 } else {
     interstitialAd.load();
@@ -1496,7 +1496,7 @@ AdmostInterstitial(
                     methods is strongly discouraged.
                 </p>
 
-                <pre><code class="language-objectivec"> if (event == AdmostAdEvent.failedToLoad) {
+                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
     print("failedToLoad");
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
@@ -1504,7 +1504,7 @@ AdmostInterstitial(
 <p><code>failedToShow</code> event state is returned to inform the application that the received interstitial failed to be shown.
     This delegate expected to be returned very rarely but if it is returned you should either load another interstitial or resume tasks.
     </p>
-                <pre><code class="language-objectivec"> if (event == AdmostAdEvent.failedToShow) {
+                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
     print("failedToShow");
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
@@ -1519,7 +1519,7 @@ AdmostInterstitial(
 
                <code>clicked</code> state is returned when interstital clicked.</p>
 
-                <pre><code class="language-objectivec">if (event == AdmostAdEvent.clicked) {
+                <pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
     print("clicked");
     print("Network: ${args['network']}");
 }</code></pre>
@@ -1531,7 +1531,7 @@ AdmostInterstitial(
                 <p>
                     You can use <code>dismissed</code> callback and reload a interstitial ad.
                 </p>
-                <pre><code class="language-objectivec">if (event == AdmostAdEvent.dismissed) {
+                <pre><code class="language-dart">if (event == AdmostAdEvent.dismissed) {
     print("dismissed");
 }</code></pre>
 
@@ -1541,7 +1541,7 @@ AdmostInterstitial(
                     first import
                     <code>'package:admost_flutter_plugin/admost_rewarded.dart'</code> to your file and declare an <code>AdmostRewarded</code> property;</p>
 
-                <pre><code class="language-objectivec">
+                <pre><code class="language-dart">
 import 'package:admost_flutter_plugin/admost.dart';
 import 'package:admost_flutter_plugin/admost_rewarded.dart';
 .
@@ -1632,7 +1632,7 @@ AdmostRewarded(
                         When <code>isLoaded</code> is <code>true</code> just call the <code>.show()</code>
                         method to present rewarded video.</p>
     
-                    <pre><code class="language-objectivec">  if (await rewardAd.isLoaded) {
+                    <pre><code class="language-dart">  if (await rewardAd.isLoaded) {
     rewardAd.show();
 } else {
     rewardAd.load();
@@ -1647,7 +1647,7 @@ AdmostRewarded(
                     methods is strongly discouraged.
                 </p>
 
-                <pre><code class="language-objectivec"> if (event == AdmostAdEvent.failedToLoad) {
+                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
     print("failedToLoad");
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
@@ -1661,7 +1661,7 @@ AdmostRewarded(
 <p><code>failedToShow</code> event state is returned to inform the application that the received rewarded video failed to be shown.
     This delegate expected to be returned very rarely but if it is returned you should either load another reward video or resume tasks.
     </p>
-                <pre><code class="language-objectivec"> if (event == AdmostAdEvent.failedToShow) {
+                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
     print("failedToShow");
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
@@ -1669,7 +1669,7 @@ AdmostRewarded(
 
 <p><code>clicked</code> state is returned when rewarded video clicked.</p>
 
-<pre><code class="language-objectivec">if (event == AdmostAdEvent.clicked) {
+<pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
 print("clicked");
 print("Network: ${args['network']}");
 }</code></pre>
@@ -1683,7 +1683,7 @@ print("Network: ${args['network']}");
     states is strongly discouraged.
 </p>
 
-<pre><code class="language-objectivec">if (event == AdmostAdEvent.completed) {
+<pre><code class="language-dart">if (event == AdmostAdEvent.completed) {
     player.reward();
   }
 </code></pre>
@@ -1696,7 +1696,7 @@ print("Network: ${args['network']}");
             You can use <code>dismissed</code> state and reload a new rewarded video ad.
         </p>
 
-                <pre><code class="language-objectivec">if (event == AdmostAdEvent.dismissed) {
+                <pre><code class="language-dart">if (event == AdmostAdEvent.dismissed) {
     animation.resume();
 } 
 </code></pre>
@@ -1757,7 +1757,7 @@ Admost.startTestSuite(Platform.isIOS
                 </p>
 
 				<pre>
-<code class="language-objectivec">
+<code class="language-dart">
     Admost.trackIAPForIOS(transactionId, currency, amount, ['tag1', 'tag2']);
 
 					</code>
@@ -1807,7 +1807,7 @@ Admost.startTestSuite(Platform.isIOS
                     You can use the following method to set application specific user id in Admost Analytics for enhanced tracking of your users. You should to call this method before initialization.
                 </p>
 
-				<pre><code class="language-objectivec">
+				<pre><code class="language-dart">
                     Admost.setUserId("applicationUserId");
                 </code></pre>
 
@@ -1834,7 +1834,7 @@ Admost.startTestSuite(Platform.isIOS
                     You can optionally use isPrivacyConsentRequired property to obtain the user is in a GDPR or CCPA required country.
                 </p>
 
-				<pre><code class="language-objectivec">
+				<pre><code class="language-dart">
 var privacyConsentStatus = await Admost.isPrivacyConsentRequired;
                 </code></pre>
 
