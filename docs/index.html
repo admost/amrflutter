@@ -1142,7 +1142,9 @@ AdmostBanner(
             // It indicates that the banner ad is clicked.
         }
         if (event == AdmostAdEvent.failedToLoad) {
+            // It indicates that the banner ad received no-fill response from all of its placements.
             print("Error code: ${args['errorCode']}");
+            print("Error message: ${args['errorMessage']}");
         }
     },
 )                          
@@ -1180,7 +1182,7 @@ AdmostBanner(
             // It indicates that the banner ad is clicked.
         }
         if (event == AdmostAdEvent.failedToLoad) {
-            print("Error code: ${args['errorCode']}");
+            // It indicates that the banner ad received no-fill response from all of its placements.
         }
     },
 ) 
@@ -1208,7 +1210,9 @@ if (event == AdmostAdEvent.clicked) {
  
                  <pre><code class="language-dart"> 
  if (event == AdmostAdEvent.failedToLoad) {
-     print("Error code: ${args['errorCode']}");
+    // It indicates that the banner ad received no-fill response from all of its placements.
+    print("Error code: ${args['errorCode']}");
+    print("Error message: ${args['errorMessage']}");
  }     </code></pre>
 
 
@@ -1220,7 +1224,7 @@ if (event == AdmostAdEvent.clicked) {
                        <pre><code class="language-dart"> import 'package:admost_flutter_plugin/admost_native_ad.dart';</code></pre>
                 <h3 id="native-ads-ios">IOS Native Ad</h3>
 
-                <p> To add native ads on IOS , download the <a target="_blank" href="http://download.admost.com/CustomXibs.zip">CustomXibs.zip</a> file and extract in <code>&lt;your project&gt;/ios/Runner</code> path.</p>
+                <p> To add native ads on IOS , download the <a target="_blank" download="CustomXibs.zip" href="http://download.admost.com/CustomXibs.zip">CustomXibs.zip</a> file and extract in <code>&lt;your project&gt;/ios/Runner</code> path.</p>
 
                 <p>You can change the layout and design of following assets; </p>
 
