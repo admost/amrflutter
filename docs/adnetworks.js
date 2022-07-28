@@ -346,11 +346,11 @@ function fillAdNetworkList() {
 }
 
 function fillPodFileCode() {
-    $('#file-pod').html("Pod::Spec.new do |spec|\n.\n.\n. \n\rspec.dependency 'AMRSDK'\n");
+    $('#file-pod').html("# Uncomment this line to define a global platform for your project \n# platform :ios, '9.0' \nuse_frameworks! target 'MyAwesomeTarget' do\n\rpod 'AMRSDK'\n");
 
     for (var i = 0; i < combinedData.length; i++) {
         if (combinedData[i].ios.adapterName && combinedData[i].ios.status == true && document.getElementById("file-pod").innerHTML.indexOf(combinedData[i].ios.adapterName) == -1) {
-            $('#file-pod').append("spec.dependency \'" + combinedData[i].ios.adapterName + "\'\n");
+            $('#file-pod').append("pod \'" + combinedData[i].ios.adapterName + "\'\n");
         }
     }
     $('#file-pod').append("\nend");

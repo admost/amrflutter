@@ -184,7 +184,7 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
                 <h2 id="setup">Setup</h2>
                 <p>You can install the AMR SDK in your Flutter app by adding the following under <code>dependencies:</code> in your <code>pubspec.yaml</code> file:</p>
                 <pre><code class="language-markup"> 
-                admost_flutter_plugin: ^1.0.7
+                admost_flutter_plugin: "^1.2.4"
                 </code>
                 </pre>
                 <p>Then navigate to your project's directory in terminal and run:</p>
@@ -192,7 +192,14 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
                 flutter pub get
                 </code>
                 </pre>
-                <a target="_blank" href="https://pub.dev/packages/admost_flutter_plugin"><img src="https://img.shields.io/badge/pub-v1.0.7-blue" alt="pubdev version"></a>
+                <p>This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):</p>
+                <pre><code class="language-markup"> 
+                    dependencies:
+        admost_flutter_plugin: ^1.2.4
+                </code>
+                </pre>
+
+                <a target="_blank" href="https://pub.dev/packages/admost_flutter_plugin"><img src="https://img.shields.io/badge/pub-v1.2.4-blue" alt="pubdev version"></a>
                 <br/>
                 <p>Please refer to following table for required and optional packages for your target.</p>
                
@@ -387,10 +394,9 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
 <br/>
                 <h4 id="skadnetwork">SKAdNetwork</h4>
                 <p>With the iOS 14, you need to add <code>SKAdNetwork</code> ids to your <code>Info.plist</code> file to support conversion tracking.</p>
-               
                 <p>Add following code to your <code>Info.plist</code> file:</p>
 
-                <pre><code id="file-ios-14">PLEASE SELECT ONE OR MORE NETWORKS TO CREATE YOUR SKADNETWORK LIST.</code></pre>
+                <pre style="height: 250px;"><code id="file-ios-14">PLEASE SELECT ONE OR MORE NETWORKS TO CREATE YOUR SKADNETWORK LIST.</code></pre>
 
                 <br/>
 
@@ -1246,7 +1252,7 @@ if (event == AdmostAdEvent.clicked) {
      You must pass the <code>xibNameForIOS:</code> parameter. </p>
   <pre><code class="language-dart">
    
-        xibNameForIOS: 'CustomNative200x200',
+        xibNameForIOS: 'AMRNativeAdBaseView250',
      
 </code></pre>
 	<pre><code class="language-dart">
@@ -1254,8 +1260,8 @@ AdmostNativeAd(
     adUnitId: Platform.isIOS
         ? 'c72a4a52-23c5-4c34-9eb1-7bbc4c08c7e4'
         : 'f3915393-7f42-4b9d-97c3-e7d4017c7591',
-    adSize: AdmostBannerSize(width:200,height:200,name:"CustomNative200x200"),
-    xibNameForIOS: 'CustomNative200x200',
+    adSize: AdmostBannerSize(width:200,height:200,name:"AMRNativeAdBaseView250"),
+    xibNameForIOS: 'AMRNativeAdBaseView250',
     listener: (AdmostAdEvent event, Map<String, dynamic> args) {
         if (event == AdmostAdEvent.loaded) {
             // It indicates that the banner ad is loaded.
