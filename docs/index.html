@@ -22,7 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script src="adnetworks.js" type="text/javascript"></script>
-    <script src="https://raw.githubusercontent.com/admost/amrandroid/master/docs/android_data.js"></script>
+    <script src="https://raw.githubusercontent.com/admost/amrandroid/master/docs/android_data.json?"></script>
 
     <!-- Favicons -->
     <link rel="icon" href="https://dashboard.admost.com/Assets/img/admostfavicon.png">
@@ -192,12 +192,6 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
                 flutter pub get
                 </code>
                 </pre>
-                <p>This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):</p>
-                <pre><code class="language-markup"> 
-                    dependencies:
-        admost_flutter_plugin: ^1.2.4
-                </code>
-                </pre>
 
                 <a target="_blank" href="https://pub.dev/packages/admost_flutter_plugin"><img src="https://img.shields.io/badge/pub-v1.2.4-blue" alt="pubdev version"></a>
                 <br/>
@@ -246,15 +240,9 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
                                     <li class="is-folder open">
                                         ios
                                         <ul>
+                                            <li class="is-file"><code>Podfile</code><i>~> HERE</i></li>
                                             <li class="is-folder open">
                                                 Flutter
-                                                <ul>
-                                                    <li class="is-file">Debug.xconfig</li>
-                                                    <li class="is-file">AppFrameworkInfo.plist</li>
-                                                    <li class="is-file">Release.xcconfig</li>
-                                                    <li class="is-file"><code>Flutter.podspec</code><i>~> HERE</i></li>
-                                                    <li class="is-file">Generated.xcconfig</li>
-                                                </ul>
                                             </li>
                                             <li class="is-folder open">
                                                 Runner
@@ -310,13 +298,13 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
 
                 <p>Please select the ad networks you want to install from the list above. 
 
-                    <code>Podspec</code> will be updated while you are choosing networks. </p>
+                    <code>Podfile</code> will be updated while you are choosing networks. </p>
 
                 <div class="row" id="adnetwork-button-list">
                 </div>
 
                 <p>To integrate AMR SDK and mediation adapters into your Flutter project using CocoaPods, specify it in
-                    your <code>Flutter.podspec:</code></p>
+                    your <code>Podfile:</code></p>
 
                 <pre><code id="file-pod">
                     PLEASE SELECT ONE OR MORE NETWORKS TO CREATE YOUR PODPSPEC DEPENDENCY LIST.

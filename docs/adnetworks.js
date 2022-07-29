@@ -51,7 +51,7 @@ function combineDatas() {
             }
         }
 
-        var el = dataIOS.adNetworks.find((value, index) => element.name != "ADMOB-17.2.0" && value.network.includes(element.name));
+        var el = dataIOS.adNetworks.find((value, index) => value.network.includes(element.name));
 
         if (typeof el != "undefined") {
 
@@ -76,7 +76,7 @@ function combineDatas() {
 
     dataIOS.adNetworks.forEach(element => {
 
-        var el = datas.find((value, index) => !value.name.includes("ADMOB") && value.name.includes(element.network));
+        var el = datas.find((value, index) => value.name.includes(element.network));
 
         if (typeof el != "undefined") {
             el.ios.SDKVersion = element.SDKVersion;
