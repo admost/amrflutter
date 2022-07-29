@@ -1,4 +1,5 @@
 var dataIOS;
+var dataAndroid;
 var htmlString = "";
 var arrayAppGradlePackages = [];
 var combinedData;
@@ -7,7 +8,8 @@ var htmlAndroidManifest = '<div class="col-md-11"> <p> Add the following lines i
 
 function amrInitPage() {
     responseIOS = httpGet("https://admost.github.io/amrios/networks.json");
-    dataAndroid = getAndroidNetworks();
+    responseAndroid = httpGet("https://admost.github.io/amrandroid/android_data.json?");
+    dataAndroid = JSON.parse(responseAndroid);
     dataIOS = JSON.parse(responseIOS);
     combinedData = combineDatas();
     fillAdNetworkList();
@@ -25,11 +27,11 @@ function combineDatas() {
             name: name,
             android: {
                 name: element.name,
-                adapterVersion: element.adapterVersion,
+                status: element.status,
+                adapter_version: element.adapter_version,
                 app_gradle: element.app_gradle,
                 project_gradle: element.project_gradle,
-                android_manifest: element.android_manifest,
-                status: element.status
+                android_manifest: element.android_manifest
             },
             ios: {
                 SDKVersion: "",
@@ -100,7 +102,7 @@ function combineDatas() {
                     app_gradle: element.app_gradle,
                     project_gradle: element.project_gradle,
                     status: element.status,
-                    adapterVersion: element.adapterVersion,
+                    adapter_version: element.adapter_version,
                     android_manifest: element.android_manifest,
                 },
                 ios: {
@@ -126,7 +128,7 @@ function combineDatas() {
                 adNetwork.android.app_gradle = el.app_gradle;
                 adNetwork.android.project_gradle = el.project_gradle;
                 adNetwork.android.status = el.status;
-                adNetwork.android.adapterVersion = el.adapterVersion;
+                adNetwork.android.adapter_version = el.adapter_version;
                 adNetwork.android.android_manifest = el.android_manifest;
 
             }
@@ -331,7 +333,7 @@ function fillAdNetworkList() {
         if (typeof element.android.name != "undefined") {
             androidButton = `<td class="text-right">
             <button type="button" onclick="toggleAdNetworkStatus('`+ element.name + `',false);" id="` + element.name + `_android" class="btn btn-outline btn-block btn-success"><i
-                class="fa fa-android"></i>&nbsp;&nbsp;`+ element.android.adapterVersion + `</button>
+                class="fa fa-android"></i>&nbsp;&nbsp;`+ element.android.adapter_version + `</button>
             </td>`
         }
         htmlString = htmlString + `<tr><td><span class="label label-success">Optional</span></td>
