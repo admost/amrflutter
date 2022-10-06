@@ -348,7 +348,7 @@ function fillAdNetworkList() {
 }
 
 function fillPodFileCode() {
-    $('#file-pod').html("# Uncomment this line to define a global platform for your project \n# platform :ios, '9.0' \nuse_frameworks! target 'MyAwesomeTarget' do\n\rpod 'AMRSDK'\n");
+    $('#file-pod').html("target 'Runner' do \n use_frameworks! \n use_modular_headers!\n\rpod 'AMRSDK'\n");
 
     for (var i = 0; i < combinedData.length; i++) {
         if (combinedData[i].ios.adapterName && combinedData[i].ios.status == true && document.getElementById("file-pod").innerHTML.indexOf(combinedData[i].ios.adapterName) == -1) {
