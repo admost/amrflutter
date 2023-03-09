@@ -25,6 +25,7 @@ function combineDatas() {
 
         var adNetwork = {
             name: name,
+            isLite: element.isLite,
             android: {
                 name: element.name,
                 status: element.status,
@@ -322,29 +323,56 @@ function fillAdNetworkList() {
             return;
         }
 
-        var iosButton = '<td class="text-right"></td>';
-        var androidButton = '<td class="text-right"></td>';;
-        if ((typeof element.ios.adapterVersion != "undefined") && element.ios.adapterVersion != "") {
-            iosButton = `<td class="text-right">
-            <button type="button" onclick="toggleAdNetworkStatus('`+ element.name + `',true);" id="` + element.name + `_ios" class="btn btn-outline btn-block btn-default">
-            <i class="fa fa-apple"></i>&nbsp;&nbsp;`+ element.ios.adapterVersion + `</button>
-        </td>`
+        console.log(element.isLite)
+        if (pageIsLite === false || (pageIsLite === true && element.isLite)) {
+            var iosButton = '<td class="text-right"></td>';
+            var androidButton = '<td class="text-right"></td>';;
+            var iosButtonColor = "default"
+            var androidButtonColor = "success"
+            var backgroundColor
+
+            if (pageIsLite == true) {
+
+                if ((typeof element.ios.adapterVersion != "undefined") && element.ios.adapterVersion != "") {
+                    iosButton = `<td class="text-right">
+                    <button style="background-color:#2196F3; color:#ffff;" type="button" onclick="" id="` + element.name + `_ios" class="btn btn-outline btn-block btn-primary">
+                    <i class="fa fa-apple"></i>&nbsp;&nbsp;`+ element.ios.adapterVersion + `</button>
+                </td>`
+
+                    addAdNetworkToPodFile(getPositionOfAdNetworkOnJSONArray(element.name));
+                }
+                if (typeof element.android.name != "undefined") {
+                    androidButton = `<td class="text-right">
+                    <button style="background-color:#2196F3; color:#ffff;" type="button" onclick="" id="` + element.name + `_android" class="btn btn-outline btn-block btn-primary">
+                    <i class="fa fa-android"></i>&nbsp;&nbsp;`+ element.android.adapter_version + `</button>
+                    </td>`
+
+                    //addAdNetworkToCart(getPositionOfAdNetworkOnJSONArray(element.name));
+                }
+
+            } else {
+                if ((typeof element.ios.adapterVersion != "undefined") && element.ios.adapterVersion != "") {
+                    iosButton = `<td class="text-right">
+                    <button type="button" onclick="toggleAdNetworkStatus('`+ element.name + `',true);" id="` + element.name + `_ios" class="btn btn-outline btn-block btn-default">
+                    <i class="fa fa-apple"></i>&nbsp;&nbsp;`+ element.ios.adapterVersion + `</button>
+                </td>`
+                }
+                if (typeof element.android.name != "undefined") {
+                    androidButton = `<td class="text-right">
+                    <button type="button" onclick="toggleAdNetworkStatus('`+ element.name + `',false);" id="` + element.name + `_android" class="btn btn-outline btn-block btn-success">
+                    <i class="fa fa-android"></i>&nbsp;&nbsp;`+ element.android.adapter_version + `</button>
+                    </td>`
+                }
+            }
+
+            htmlString = htmlString + `<tr><td><span class="label label-success">Optional</span></td>
+            <td>`+ element.name + `</td>
+            `+ androidButton + iosButton + `
+          </tr>`;
         }
-        if (typeof element.android.name != "undefined") {
-            androidButton = `<td class="text-right">
-            <button type="button" onclick="toggleAdNetworkStatus('`+ element.name + `',false);" id="` + element.name + `_android" class="btn btn-outline btn-block btn-success"><i
-                class="fa fa-android"></i>&nbsp;&nbsp;`+ element.android.adapter_version + `</button>
-            </td>`
-        }
-        htmlString = htmlString + `<tr><td><span class="label label-success">Optional</span></td>
-        <td>`+ element.name + `</td>
-        `+ androidButton + iosButton + `
-      </tr>`;
 
     });
     $("#adnetwork-table tbody").append(htmlString);
-
-
 }
 
 function fillPodFileCode() {
@@ -400,4 +428,24 @@ function httpGet(theUrl) {
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
     xmlHttp.send(null);
     return xmlHttp.responseText;
+}
+
+function checkPageStatus() {
+
+    var queryString = window.location.search;
+    var params = new URLSearchParams(queryString);
+
+    pageIsLite = (params.get("islite") === "true")
+
+    if (pageIsLite) {
+        var notLiteElements = document.getElementsByClassName("not-lite");
+        for (let i = 0; i < notLiteElements.length; i++) {
+            notLiteElements[i].style.display = "none";
+        }
+    } else {
+        var isLiteElements = document.getElementsByClassName("is-lite");
+        for (let i = 0; i < isLiteElements.length; i++) {
+            isLiteElements[i].style.display = "none";
+        }
+    }
 }

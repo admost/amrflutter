@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +17,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400" rel="stylesheet"
-          type="text/css">
+        type="text/css">
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -30,289 +31,305 @@
 
 <body data-spy="scroll" data-target=".sidebar" data-offset="200">
 
-<header class="site-header navbar-transparent sticky">
+    <header class="site-header navbar-transparent sticky">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container">
 
-            <!-- Toggle buttons and brand -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+                <!-- Toggle buttons and brand -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="true" aria-controls="navbar">
-                    <span class="glyphicon glyphicon-option-vertical"></span>
-                </button>
+                        <span class="glyphicon glyphicon-option-vertical"></span>
+                    </button>
 
-                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://admost.github.io"><img src="assets/img/logo-white.svg" alt="logo"></a>
+                    <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://admost.github.io"><img src="assets/img/logo-white.svg"
+                            alt="logo"></a>
 
+                </div>
+                <!-- END Toggle buttons and brand -->
+
+                <!-- Top navbar -->
+                <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.html">Documentation</a></li>
+                        <li><a target="_blank" href="https://admost.github.io/privacy.html">Privacy Compliance</a></li>
+                        <li><a href="release-notes.html">Release Notes</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li>
+                            <a target="_blank" href="https://github.com/admost/amrflutter">
+                                <i class="fa fa-github"></i>&nbsp;&nbsp;Github</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Top navbar -->
             </div>
-            <!-- END Toggle buttons and brand -->
+        </nav>
+        <!-- END Top navbar & branding -->
 
-            <!-- Top navbar -->
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Documentation</a></li>
-                    <li><a target="_blank" href="https://admost.github.io/privacy.html">Privacy Compliance</a></li>
-                    <li><a href="release-notes.html">Release Notes</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li>
-                        <a target="_blank" href="https://github.com/admost/amrflutter">
-                        <i class="fa fa-github"></i>&nbsp;&nbsp;Github</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- END Top navbar -->
-        </div>
-    </nav>
-    <!-- END Top navbar & branding -->
-
-    <!-- Banner -->
-    <div class="banner auto-size" style="background-color: #0175C2">
+        <!-- Banner -->
+        <div class="banner auto-size" style="background-color: #0175C2">
             <div class="container text-white">
                 <h1><i class="flutter-icon"></i>&nbsp; &nbsp;Flutter Integration Guide</h1>
-                <h5>This is the easiest way to implement AMR Flutter SDK and ad networks to your current Mobile App. </h5>
+                <h5>This is the easiest way to implement AMR Flutter SDK and ad networks to your current Mobile App.
+                </h5>
             </div>
         </div>
         <!-- END Banner -->
-</header>
+    </header>
 
 
-<main class="container">
-    <div class="row">
-        <!-- Sidebar -->
-        <aside class="col-sm-3 sidebar">
-            <ul class="nav sidenav dropable sticky">
-                <li><a href="#prerequisites">Prerequisites</a></li>
-                <li>
-                    <a href="#setup">Setup</a>
-                    <ul>
-                        <li>
-                            <a href="#ios-setup-notes">IOS Setup Notes</a>
-                            <ul style="display: block;">
-                                <li><a href="#required-files-ios">Required Files</a></li>
-                                <li><a href="#edit-files-ios">Edit Files</a></li>
-                                <li><a href="#skadnetwork">SKAdNetwork </a></li>
-                                <li><a href="#ios14">iOS14 </a> </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#android-setup-notes">Android Setup Notes</a>
-                            <ul style="display: block;">
-                                <li><a href="#required-files-android">Required Files</a></li>
-                                <li><a href="#edit-files-android">Edit Files</a></li>
-                                <li><a href="#proguard">Proguard</a></li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                </li>
-                <li>
-                    <a href="#usage">Usage</a>
-                    <ul>
-                        <li><a href="#initialization">Initialization</a></li>
+    <main class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-sm-3 sidebar">
+                <ul class="nav sidenav dropable sticky">
+                    <li><a href="#prerequisites">Prerequisites</a></li>
+                    <li>
+                        <a href="#setup">Setup</a>
+                        <ul>
+                            <li>
+                                <a href="#ios-setup-notes">IOS Setup Notes</a>
+                                <ul style="display: block;">
+                                    <li><a href="#required-files-ios">Required Files</a></li>
+                                    <li><a href="#edit-files-ios">Edit Files</a></li>
+                                    <li><a href="#skadnetwork">SKAdNetwork </a></li>
+                                    <li><a href="#ios14">iOS14 </a> </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#android-setup-notes">Android Setup Notes</a>
+                                <ul style="display: block;">
+                                    <li><a href="#required-files-android">Required Files</a></li>
+                                    <li><a href="#edit-files-android">Edit Files</a></li>
+                                    <li><a href="#proguard">Proguard</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#usage">Usage</a>
+                        <ul>
+                            <li><a href="#initialization">Initialization</a></li>
                             <ul style="display: block;">
                                 <li><a href="#initgdpr">GDPR and CCPA</a></li>
                             </ul>
-                        <li><a href="#banner-ads">Banner Ads</a></li>
-                        <li><a href="#native-ads">Customize Native Ad Appearance (Optional)</a>
-                            <ul style="display: block;">
-                                <li><a href="#native-ads-ios">IOS Native Ad</a></li>
-                                <li><a href="#native-ads-android">Android Native Ad</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#interstitial-ads">Interstitial Ads</a></li>
-                        <li><a href="#rewarded-video-ads">Rewarded Video Ads</a></li>
-                      
-                    </ul>
-                </li>
-                <li><a href="#extras">Extras</a>
-                    <ul>
-                        <li><a href="#testsuite">Test Suite</a></li>
-                        <li><a href="#iap">In App Purchase Tracking</a>
-                            <ul style="display: block;">
-                                <li><a href="#iap-ios">IAP IOS</a></li>
-                                <li><a href="#iap-android">IAP Android</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#senduserid">Setting Application User Id</a></li>
-                        <li><a href="#adjustintegration">Adjust Integration </a></li>
-                        <li><a href="#appsflyerintegration">AppsFlyer Integration </a></li>
-                        <li><a href="#privacycheck">Privacy Consent Required </a></li>
-                        <li><a href="#appprivacy">Apple App Privacy (IOS Only) </a></li>
-                    </ul>
-                </li>
-            </ul>
+                            <li><a href="#banner-ads">Banner Ads</a></li>
+                            <li class="not-lite"><a href="#native-ads">Customize Native Ad Appearance (Optional)</a>
+                                <ul style="display: block;">
+                                    <li><a href="#native-ads-ios">IOS Native Ad</a></li>
+                                    <li><a href="#native-ads-android">Android Native Ad</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#interstitial-ads">Interstitial Ads</a></li>
+                            <li><a href="#rewarded-video-ads">Rewarded Video Ads</a></li>
 
-        </aside>
-        <!-- END Sidebar -->
-
-        <!-- Main content -->
-        <article class="col-sm-9 main-content" role="main">
-            <section>
-                <h2 id="prerequisites">Prerequisites</h2>
-                <ul>
-                    <li>Flutter 2 or later.</li>
-                    <li>Xcode 12.5 or later.</li>
-                    <li>iOS 9 or later.</li>
-                    <li>Android 4.0 (Ice Cream Sandwich - API Version 14) or later.</li>
-                    <li>Enable AndroidX in your project. <a href="https://developer.android.com/jetpack/androidx/migrate" target="_blank">For more information</a>.</li>
-                    <li>Application Id provided in Admost Mediation Dashboard.</li>
-                    <li>Zone Id(s) provided in Admost Mediation Dashboard.</li>
+                        </ul>
+                    </li>
+                    <li class="not-lite"><a href="#extras">Extras</a>
+                        <ul>
+                            <li><a href="#testsuite">Test Suite</a></li>
+                            <li><a href="#iap">In App Purchase Tracking</a>
+                                <ul style="display: block;">
+                                    <li><a href="#iap-ios">IAP IOS</a></li>
+                                    <li><a href="#iap-android">IAP Android</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#senduserid">Setting Application User Id</a></li>
+                            <li><a href="#adjustintegration">Adjust Integration </a></li>
+                            <li><a href="#appsflyerintegration">AppsFlyer Integration </a></li>
+                            <li><a href="#privacycheck">Privacy Consent Required </a></li>
+                            <li><a href="#appprivacy">Apple App Privacy (IOS Only) </a></li>
+                        </ul>
+                    </li>
                 </ul>
 
-                <p>For testing you can use following Ids;</p>
-<h5>IOS Test Ids</h5>
-                <pre><code class="language-markup">
+            </aside>
+            <!-- END Sidebar -->
+
+            <!-- Main content -->
+            <article class="col-sm-9 main-content" role="main">
+                <section>
+                    <h2 id="prerequisites">Prerequisites</h2>
+                    <ul>
+                        <li>Flutter 2 or later.</li>
+                        <li>Xcode 12.5 or later.</li>
+                        <li>iOS 9 or later.</li>
+                        <li>Android 4.0 (Ice Cream Sandwich - API Version 14) or later.</li>
+                        <li>Enable AndroidX in your project. <a
+                                href="https://developer.android.com/jetpack/androidx/migrate" target="_blank">For more
+                                information</a>.</li>
+                        <li>Application Id provided in Admost Mediation Dashboard.</li>
+                        <li>Zone Id(s) provided in Admost Mediation Dashboard.</li>
+                    </ul>
+
+                    <p>For testing you can use following Ids;</p>
+                    <h5>IOS Test Ids</h5>
+                    <pre><code class="language-markup">
 Application Id: "15066ddc-9c18-492c-8185-bea7e4c7f88c"
 Banner Zone Id: "b4009772-de04-42c4-bbaa-c18da9e4a1ab"
 Interstitial Zone Id: "39f74377-5682-436a-9338-9d1c4df410bd"
 RewardedVideo Zone Id: "2bdefd44-5269-4cbc-b93a-373b74a2f067"
                 </code></pre>
-                <h5>Android Test Ids</h5>
-                <pre><code class="language-markup">
+                    <h5>Android Test Ids</h5>
+                    <pre><code class="language-markup">
 Application Id: "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe"
 Banner Zone Id: "9fb970db-7d96-4ef2-ac8c-d88ec22270ff"
 Interstitial Zone Id: "f99e409b-f9ab-4a2e-aa9a-4d143e6809ae"
 RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
                 </code></pre>
-            </section>
-            <section>
-                <h2 id="setup">Setup</h2>
-                <p>You can install the AMR SDK in your Flutter app by adding the following under <code>dependencies:</code> in your <code>pubspec.yaml</code> file:</p>
-                <pre><code class="language-markup"> 
+                </section>
+                <section>
+                    <h2 id="setup">Setup</h2>
+                    <p>You can install the AMR SDK in your Flutter app by adding the following under
+                        <code>dependencies:</code> in your <code>pubspec.yaml</code> file:
+                    </p>
+                    <pre><code class="language-markup"> 
                 admost_flutter_plugin: "^1.2.5"
                 </code>
                 </pre>
-                <p>Then navigate to your project's directory in terminal and run:</p>
-                <pre><code class="language-markup"> 
+                    <p>Then navigate to your project's directory in terminal and run:</p>
+                    <pre><code class="language-markup"> 
                 flutter pub get
                 </code>
                 </pre>
 
-                <a target="_blank" href="https://pub.dev/packages/admost_flutter_plugin"><img src="https://img.shields.io/badge/pub-v1.2.5-blue" alt="pubdev version"></a>
-                <br/>
-                <p>Please refer to following table for required and optional packages for your target.</p>
-               
-               
-                <div class="table-responsive">
-                    <table class="table table-info" id="adnetwork-table">
-                        <thead>
-                        <tr>
-                            <th>Status</th>
-                            <th>Name</th>
-                            <th class="text-center" colspan="2">Download Links</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
+                    <a target="_blank" href="https://pub.dev/packages/admost_flutter_plugin"><img
+                            src="https://img.shields.io/badge/pub-v1.2.5-blue" alt="pubdev version"></a>
+                    <br />
+                    <p>Please refer to following table for required and optional packages for your target.</p>
 
 
-                <h3 id="ios-setup-notes">IOS Setup Notes</h3>
-                <ul>
-                    <li><a href="#required-files-ios">Step 1: Required Files</a></li>
-                    <li><a href="#edit-files-ios">Step 2: Edit Files</a></li>
-                    <li><a href="#skadnetwork">Step 3: SKAdNetwork </a></li>
-                    <li><a href="#ios14">Step 4: iOS14 </a> </li>
-                </ul>
-                <br/>
-                <h4 id="required-files-ios">Required Files</h3>
-                    <p>With your selections you are going to work with following files;</p>
-                    <ul id="list-of-files">
-                        <li><code>Podfile</code></li>
-                        <li><code>Info.plist</code></li>
-                    </ul>
-                    <div class="code-window">
-                        <div class="code-preview">
-                            <p><i> Flutter ~ Project view | Info.plist and Podfile location</i></p>
-                            <div class="file-tree">
-                                <ul>
-                                    <li class="is-folder">
-                                        android
-                                    </li>
-                                    
-                                    <li class="is-folder open">
-                                        ios
-                                        <ul>
-                                            <li class="is-file"><code>Podfile</code><i>~> HERE</i></li>
-                                            <li class="is-folder open">
-                                                Flutter
-                                            </li>
-                                            <li class="is-folder open">
-                                                Runner
-                                                <ul>
-                                                    <li class="is-file">
-                                                        AppDelegate.swift
-                                                    </li>
-                                                    <li class="is-folder">Assets.xcassets</li>
-                                                    <li class="is-folder">Base.lproj</li>
-                                                    <li class="is-file">GeneratedPluginRegistrant.h</li>
-                                                    <li class="is-file">GeneratedPluginRegistrant.m</li>
-                                                    <li class="is-file"><code>Info.plist</code><i>~> HERE</i></li>
-                                                    <li class="is-file">Runner-Bridging-Header.h</li>
-    
-                                                </ul>
-                                            </li>
-                                            <li class="is-file">
-                                                Runner.xcodeproj
-                                            </li>
-                                            <li class="is-file">
-                                                Runner.xcworkspace
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="is-folder">
-                                        lib
-                                    </li>
-                                    <li class="is-file">pubspec.yaml</li>
-                                </ul>
-                            </div>
-    
-                            
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-info" id="adnetwork-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th class="text-center" colspan="2">Download Links</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
                     </div>
-                    <br/>
-                    <ul id="list-of-files">
-                        <li> <p><a href="https://cocoapods.org" target="_blank">CocoaPods</a> is a dependency manager for Swift and
-                            Objective-C Cocoa projects which automates and simplifies the process of using 3rd-party libraries
-                            like AMR in your projects. See <a href="https://guides.cocoapods.org/using/getting-started.html"
-                                                              target="_blank">getting started guide</a> for more information on
-                            installing cocoapods.</p></li>
+
+
+                    <h3 id="ios-setup-notes">IOS Setup Notes</h3>
+                    <ul>
+                        <li><a href="#required-files-ios">Step 1: Required Files</a></li>
+                        <li><a href="#edit-files-ios">Step 2: Edit Files</a></li>
+                        <li><a href="#skadnetwork">Step 3: SKAdNetwork </a></li>
+                        <li><a href="#ios14">Step 4: iOS14 </a> </li>
                     </ul>
-               
-                    <br/>
+                    <br />
+                    <h4 id="required-files-ios">Required Files</h3>
+                        <p>With your selections you are going to work with following files;</p>
+                        <ul id="list-of-files">
+                            <li><code>Podfile</code></li>
+                            <li><code>Info.plist</code></li>
+                        </ul>
+                        <div class="code-window">
+                            <div class="code-preview">
+                                <p><i> Flutter ~ Project view | Info.plist and Podfile location</i></p>
+                                <div class="file-tree">
+                                    <ul>
+                                        <li class="is-folder">
+                                            android
+                                        </li>
 
-                <h4 id="edit-files-ios">Edit Files</h4>
-                
-                <p>
-                    At least one mediation adapter is required for AMRSDK to show banners. You can add all adapters
-                    (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR agent for
-                    further details.
-                </p>
+                                        <li class="is-folder open">
+                                            ios
+                                            <ul>
+                                                <li class="is-file"><code>Podfile</code><i>~> HERE</i></li>
+                                                <li class="is-folder open">
+                                                    Flutter
+                                                </li>
+                                                <li class="is-folder open">
+                                                    Runner
+                                                    <ul>
+                                                        <li class="is-file">
+                                                            AppDelegate.swift
+                                                        </li>
+                                                        <li class="is-folder">Assets.xcassets</li>
+                                                        <li class="is-folder">Base.lproj</li>
+                                                        <li class="is-file">GeneratedPluginRegistrant.h</li>
+                                                        <li class="is-file">GeneratedPluginRegistrant.m</li>
+                                                        <li class="is-file"><code>Info.plist</code><i>~> HERE</i></li>
+                                                        <li class="is-file">Runner-Bridging-Header.h</li>
 
-                <p>Please select the ad networks you want to install from the list above. 
+                                                    </ul>
+                                                </li>
+                                                <li class="is-file">
+                                                    Runner.xcodeproj
+                                                </li>
+                                                <li class="is-file">
+                                                    Runner.xcworkspace
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="is-folder">
+                                            lib
+                                        </li>
+                                        <li class="is-file">pubspec.yaml</li>
+                                    </ul>
+                                </div>
 
-                    <code>Podfile</code> will be updated while you are choosing networks. </p>
 
-                <div class="row" id="adnetwork-button-list">
-                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <ul id="list-of-files">
+                            <li>
+                                <p><a href="https://cocoapods.org" target="_blank">CocoaPods</a> is a dependency manager
+                                    for Swift and
+                                    Objective-C Cocoa projects which automates and simplifies the process of using
+                                    3rd-party libraries
+                                    like AMR in your projects. See <a
+                                        href="https://guides.cocoapods.org/using/getting-started.html"
+                                        target="_blank">getting started guide</a> for more information on
+                                    installing cocoapods.</p>
+                            </li>
+                        </ul>
 
-                <p>To integrate AMR SDK and mediation adapters into your Flutter project using CocoaPods, specify it in
-                    your <code>Podfile:</code></p>
+                        <br />
 
-                <pre><code id="file-pod">
+                        <h4 id="edit-files-ios">Edit Files</h4>
+
+                        <p>
+                            At least one mediation adapter is required for AMRSDK to show banners. You can add all
+                            adapters
+                            (recommended for maximized revenue) or start with a subset of adapters. Consult your AMR
+                            agent for
+                            further details.
+                        </p>
+
+                        <p>Please select the ad networks you want to install from the list above.
+
+                            <code>Podfile</code> will be updated while you are choosing networks.
+                        </p>
+
+                        <div class="row" id="adnetwork-button-list">
+                        </div>
+
+                        <p>To integrate AMR SDK and mediation adapters into your Flutter project using CocoaPods,
+                            specify it in
+                            your <code>Podfile:</code></p>
+
+                        <pre><code id="file-pod">
                     PLEASE SELECT ONE OR MORE NETWORKS TO CREATE YOUR PODPSPEC DEPENDENCY LIST.
                 </code></pre>
-                <br/>
-                <p> Add following lines to your <code>plist</code> file.</p>
+                        <br />
+                        <p> Add following lines to your <code>plist</code> file.</p>
 
-                <pre><code class="language-markup">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+                        <pre><code class="language-markup">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
 &lt;dict&gt;
     &lt;key&gt;NSExceptionDomains&lt;/key&gt;
     &lt;dict&gt;
@@ -324,52 +341,66 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
             &lt;true/&gt;
         &lt;/dict&gt;
     &lt;/dict&gt;
-&lt;/dict&gt;</code></pre>               
+&lt;/dict&gt;</code></pre>
 
-                <pre><code class="language-markup">&lt;key&gt;NSCalendarsUsageDescription&lt;/key&gt;
+                        <pre><code class="language-markup">&lt;key&gt;NSCalendarsUsageDescription&lt;/key&gt;
 &lt;string&gt;Some ad content may access calendar&lt;/string&gt;</code></pre>
 
-                <div class="callout callout-danger" role="alert">
-                    <h4></h4>
+                        <div class="callout callout-danger" role="alert">
+                            <h4></h4>
 
-                    <p><span class="label label-danger">Important</span> If you are using AdMob you must add your AdMob <code>App ID</code> to your <code>plist</code> file with <code>GADApplicationIdentifier</code> key as shown below. <br/>(Replace <code>ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX</code> with your own <code>App ID</code>)</p>
-						<pre>
+                            <p><span class="label label-danger">Important</span> If you are using AdMob you must add
+                                your AdMob <code>App ID</code> to your <code>plist</code> file with
+                                <code>GADApplicationIdentifier</code> key as shown below. <br />(Replace
+                                <code>ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX</code> with your own <code>App ID</code>)
+                            </p>
+                            <pre>
 <code class="language-markup">
 &lt;key&gt;GADApplicationIdentifier&lt;/key&gt;
 &lt;string&gt;ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX&lt;/string&gt;
 </code></pre>
 
-                    <p>Your <code>App ID</code> can be found on AdMob dashboard -&gt; Apps -&gt; App settings -&gt; App info.</p>
-                    <p><img class="img-responsive" src="assets/img/admob_appid.png" alt="admob_appid.png"></p>
-                </div>
+                            <p>Your <code>App ID</code> can be found on AdMob dashboard -&gt; Apps -&gt; App settings
+                                -&gt; App info.</p>
+                            <p><img class="img-responsive" src="assets/img/admob_appid.png" alt="admob_appid.png"></p>
+                        </div>
 
-                <div class="callout callout-danger" role="alert">
-                   <h4></h4>
-                   <p><span class="label label-danger">Important</span> If you are using AppLovin you must add <code>AppLovin SDK Key</code> to your <code>plist</code> file with <code>AppLovinSdkKey</code> key as shown below. <br/>(Replace <code>XXXXXXXXXXXXXXX</code> with your own <code>AppLovin SDK Key</code>)
-	</p>
-<pre><code class="language-markup">
+                        <div class="callout callout-danger not-lite" role="alert">
+                            <h4></h4>
+                            <p><span class="label label-danger">Important</span> If you are using AppLovin you must add
+                                <code>AppLovin SDK Key</code> to your <code>plist</code> file with
+                                <code>AppLovinSdkKey</code> key as shown below. <br />(Replace
+                                <code>XXXXXXXXXXXXXXX</code> with your own <code>AppLovin SDK Key</code>)
+                            </p>
+                            <pre><code class="language-markup">
 &lt;key&gt;AppLovinSdkKey&lt;/key&gt;
 &lt;string&gt;XXXXXXXXXXXXXXX&lt;/string&gt;
 </code></pre>
-                    <p>Your <code>AppLovin SDK Key</code> can be found on AppLovin Dashboard -&gt; Account -&gt; Keys.</p>
- <p><img class="img-responsive" src="assets/img/applovin_sdkkey.png" alt="applovin_sdkkey.png"></p>
-                </div>
+                            <p> Your <code>AppLovin SDK Key</code> can be found on AppLovin Dashboard -&gt; Account
+                                -&gt; Keys.</p>
+                            <p class="not-lite"><img class="img-responsive" src="assets/img/applovin_sdkkey.png"
+                                    alt="applovin_sdkkey.png"></p>
+                        </div>
 
-                <div class="callout callout-danger" role="alert">
-                        <h4></h4>
-                        <p><span class="label label-danger">Important</span> If you are using Appsamurai or YouAppi you must set <code>Always Embed Swift Libraries</code> value YES.</p>
-                </div>
+                        <div class="callout callout-danger" role="alert">
+                            <h4></h4>
+                            <p><span class="label label-danger">Important</span> If you are using Appsamurai or YouAppi
+                                you must set <code>Always Embed Swift Libraries</code> value YES.</p>
+                        </div>
 
-                <div class="callout callout-danger" role="alert">
-                        <h4></h4>
-                        <p><span class="label label-danger">Important</span> If you are using Pollfish you must update and add Pollfish Policy to your privacy policy file.	</p>
-                        <p><a href="https://www.pollfish.com/docs/ios" target="_blank">Pollfish Privacy Policy</a></p>
-                </div>
+                        <div class="callout callout-danger" role="alert">
+                            <h4></h4>
+                            <p><span class="label label-danger">Important</span> If you are using Pollfish you must
+                                update and add Pollfish Policy to your privacy policy file. </p>
+                            <p><a href="https://www.pollfish.com/docs/ios" target="_blank">Pollfish Privacy Policy</a>
+                            </p>
+                        </div>
 
-                <div class="callout callout-warning" role="alert">
-                        <h4></h4>
-                        <p><span class="label label-warning">Optional</span> If you are using AdColony you need to add following code to your <code>plist</code> file.</p>
-                        <pre><code class="language-markup">
+                        <div class="callout callout-warning not-lite" role="alert">
+                            <h4></h4>
+                            <p><span class="label label-warning">Optional</span> If you are using AdColony you need to
+                                add following code to your <code>plist</code> file.</p>
+                            <pre><code class="language-markup">
 &lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;
 &lt;array&gt;
     &lt;string&gt;fb&lt;/string&gt;
@@ -378,29 +409,37 @@ RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
     &lt;string&gt;twitter&lt;/string&gt;
 &lt;/array&gt;
                         </code></pre>
-                </div>
-<br/>
-                <h4 id="skadnetwork">SKAdNetwork</h4>
-                <p>With the iOS 14, you need to add <code>SKAdNetwork</code> ids to your <code>Info.plist</code> file to support conversion tracking.</p>
-                <p>Add following code to your <code>Info.plist</code> file:</p>
+                        </div>
+                        <br />
+                        <h4 id="skadnetwork">SKAdNetwork</h4>
+                        <p>With the iOS 14, you need to add <code>SKAdNetwork</code> ids to your <code>Info.plist</code>
+                            file to support conversion tracking.</p>
+                        <p>Add following code to your <code>Info.plist</code> file:</p>
 
-                <pre style="height: 250px;"><code id="file-ios-14">PLEASE SELECT ONE OR MORE NETWORKS TO CREATE YOUR SKADNETWORK LIST.</code></pre>
+                        <pre
+                            style="height: 250px;"><code id="file-ios-14">PLEASE SELECT ONE OR MORE NETWORKS TO CREATE YOUR SKADNETWORK LIST.</code></pre>
 
-                <br/>
+                        <br />
 
-                
-                <h5 id="ios14"> iOS 14</h5>
-                    <p>Starting with iOS 14, apps will be required to ask users for permission to access IDFA. In order to ask for this permission and display the App Tracking Transparency authorization request for accessing the IDFA, you will need to add <code>NSUserTrackingUsageDescription</code> key to <code>Info.plist</code> file.</p>
-                    <pre>
+
+                        <h5 id="ios14"> iOS 14</h5>
+                        <p>Starting with iOS 14, apps will be required to ask users for permission to access IDFA. In
+                            order to ask for this permission and display the App Tracking Transparency authorization
+                            request for accessing the IDFA, you will need to add
+                            <code>NSUserTrackingUsageDescription</code> key to <code>Info.plist</code> file.
+                        </p>
+                        <pre>
 <code class="language-markup">
 &lt;key&gt;NSUserTrackingUsageDescription&lt;/key&gt;
 &lt;string&gt;Your awesome message to encourage user to give permission to access IDFA&lt;/string&gt;
 </code>
                     </pre>
-					
-                    <p>To present the authorization request, call <code>AdmostATTrackingManager.requestTrackingAuthorization():</code></p>
 
-                    <pre><code class="language-dart">
+                        <p>To present the authorization request, call
+                            <code>AdmostATTrackingManager.requestTrackingAuthorization():</code>
+                        </p>
+
+                        <pre><code class="language-dart">
 import 'package:admost_flutter_plugin/admost_ios_attrackingmanager.dart';
 
 ...
@@ -410,122 +449,149 @@ if (Platform.isIOS) {
     });
 }
                     </code></pre>
-                    
-					
-                    <p>User is prompted with following popup after <code>requestTrackingAuthorization</code> call.
-						
-									 <p><center><img class="img-responsive" src="assets/img/att-iOS.PNG" alt="att-iOS.png"></center></p>
-					
-				                    <p>Please see <code><a href="https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus" target="_blank">ATTrackingManager.AuthorizationStatus</a></code> for possible return values.
-									</p>
-									<!-- </section> <section> -->
-                <h3 id="android-setup-notes">Android Setup Notes</h3>
-                <h4 id="required-files-android">Required Files</h3>
-                <p>With your selections you are going to work with following files;</p>
-                <ul id="list-of-files">
-                    <li><code>/build.gradle</code></li>
-                    <li><code>/app/src/build.gradle</code></li>
-                    <li><code>gradle.properties</code></li>
-                    <li><code>AndroidManifest.xml</code></li>
-                </ul>
-                <p>If you are using proguard you have to edit <code>/app/src/proguard-rules.pro</code> too. </p>
-                <div class="code-window">
-                    <div class="code-preview">
-                        <p><i> Flutter ~ Project view</i></p>
-                        <div class="file-tree">
-                            <ul>
-                                <li class="is-folder open">
-                                    android
-                                    <ul>
-                                        <li class="is-folder open">
-                                            app
-                                            <ul>
-                                                <li class="is-folder open">src
-                                                    <ul>
-                                                        <li class="is-folder ">debug</li>
-                                                        <li class="is-folder open">
-                                                            main
-                                                            <ul>
-                                                                <li class="is-file"><code>AndroidManifest.xml</code><i>~> AndroidManifest.xml</i></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="is-folder ">profile</li>
-                                                    </ul>
-                                                </li>
-                                                <li class="is-file"><code>build.gradle</code><i>~> /app/src/build.gradle</i></li>
-                                                <li class="is-file"><code>proguard-rules.pro</code><i>~> /app/src/proguard-rules.pro</i></li>
 
-                                            </ul>
-                                        </li>
-                                        <li class="is-folder ">  gradle</li>
-                                        <li class="is-file"><code>build.gradle</code><i>~> /build.gradle</i></li>
-                                        <li class="is-file"><code>gradle.properties</code><i>~> gradle.properties</i></li>
-                                    </ul>
-                                </li>
-                                <li class="is-folder ">
-                                    ios
-                                   
-                                </li>
-                                <li class="is-folder">
-                                    lib
-                                </li>
-                                <li class="is-file">pubspec.yaml</li>
+
+                        <p>User is prompted with following popup after <code>requestTrackingAuthorization</code> call.
+
+                        <p>
+                            <center><img class="img-responsive" src="assets/img/att-iOS.PNG" alt="att-iOS.png"></center>
+                        </p>
+
+                        <p>Please see
+                            <code><a href="https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus" target="_blank">ATTrackingManager.AuthorizationStatus</a></code>
+                            for possible return values.
+                        </p>
+                        <!-- </section> <section> -->
+                        <h3 id="android-setup-notes">Android Setup Notes</h3>
+                        <h4 id="required-files-android">Required Files</h3>
+                            <p>With your selections you are going to work with following files;</p>
+                            <ul id="list-of-files">
+                                <li><code>/build.gradle</code></li>
+                                <li><code>/app/src/build.gradle</code></li>
+                                <li><code>gradle.properties</code></li>
+                                <li><code>AndroidManifest.xml</code></li>
                             </ul>
-                        </div>
+                            <p>If you are using proguard you have to edit <code>/app/src/proguard-rules.pro</code> too.
+                            </p>
+                            <div class="code-window">
+                                <div class="code-preview">
+                                    <p><i> Flutter ~ Project view</i></p>
+                                    <div class="file-tree">
+                                        <ul>
+                                            <li class="is-folder open">
+                                                android
+                                                <ul>
+                                                    <li class="is-folder open">
+                                                        app
+                                                        <ul>
+                                                            <li class="is-folder open">src
+                                                                <ul>
+                                                                    <li class="is-folder ">debug</li>
+                                                                    <li class="is-folder open">
+                                                                        main
+                                                                        <ul>
+                                                                            <li class="is-file">
+                                                                                <code>AndroidManifest.xml</code><i>~>
+                                                                                    AndroidManifest.xml</i>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="is-folder ">profile</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="is-file"><code>build.gradle</code><i>~>
+                                                                    /app/src/build.gradle</i></li>
+                                                            <li class="is-file"><code>proguard-rules.pro</code><i>~>
+                                                                    /app/src/proguard-rules.pro</i></li>
 
-                        
-                    </div>
-                </div>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="is-folder "> gradle</li>
+                                                    <li class="is-file"><code>build.gradle</code><i>~> /build.gradle</i>
+                                                    </li>
+                                                    <li class="is-file"><code>gradle.properties</code><i>~>
+                                                            gradle.properties</i></li>
+                                                </ul>
+                                            </li>
+                                            <li class="is-folder ">
+                                                ios
 
-                <h4 id="edit-files-android">Edit Files</h3>
-                <p> Add the following lines inside <var> repositories{}</var> bracelets in <code>/build.gradle</code>  file</p> 
-                <pre><code id="code-projectgradle"></code></pre> 
-                
-           
-                
-               
-                <div class="row" id="file-projectgradlejava">
-                    <div class="col-md-11"><p>Add the following lines inside <var> android{}</var> bracelets in <code>/app/src/build.gradle</code>file </div>
-                    <div class="col-md-1">
-                    </div>
-                    <div class="col-md-12" id="file-appgradlejava"> <pre><code class="language-markup" id="code-appgradlejava"> 
+                                            </li>
+                                            <li class="is-folder">
+                                                lib
+                                            </li>
+                                            <li class="is-file">pubspec.yaml</li>
+                                        </ul>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <h4 id="edit-files-android">Edit Files</h3>
+                                <p> Add the following lines inside <var> repositories{}</var> bracelets in
+                                    <code>/build.gradle</code> file
+                                </p>
+                                <pre><code id="code-projectgradle"></code></pre>
+
+
+
+
+                                <div class="row" id="file-projectgradlejava">
+                                    <div class="col-md-11">
+                                        <p>Add the following lines inside <var> android{}</var> bracelets in
+                                            <code>/app/src/build.gradle</code>file
+                                    </div>
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-12" id="file-appgradlejava">
+                                        <pre><code class="language-markup" id="code-appgradlejava"> 
                     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }</code></pre> </div></div>
-    <p> Add the following lines inside <var> dependencies{}</var> bracelets in <code>/app/src/build.gradle</code>  file</p> 
-                     <pre><code id="code-dependencies"></code></pre> 
+    }</code></pre>
+                                    </div>
+                                </div>
+                                <p> Add the following lines inside <var> dependencies{}</var> bracelets in
+                                    <code>/app/src/build.gradle</code> file
+                                </p>
+                                <pre><code id="code-dependencies"></code></pre>
 
-                    <div class="row" id="file-appgradle">
-                    </div>
-					<div class="row" id="file-gradleproperties">
-                    </div>
-                    <div class="row" id="file-androidmanifest">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-11">
-                            <p>It is highly recommended to enable AndroidX in your project. Editing <code>gradle.properties</code> file and adding the lines below(if they are not present) is required for most ad-network sdks.</b> </p>
-                        </div>
-                        
-                        <div class="col-md-12" id="file-gradleproperties">
-<pre>
+                                <div class="row" id="file-appgradle">
+                                </div>
+                                <div class="row" id="file-gradleproperties">
+                                </div>
+                                <div class="row" id="file-androidmanifest">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <p>It is highly recommended to enable AndroidX in your project. Editing
+                                            <code>gradle.properties</code> file and adding the lines below(if they are
+                                            not present) is required for most ad-network sdks.</b>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-12" id="file-gradleproperties">
+                                        <pre>
 <code id="code-gradleproperties">
 android.useAndroidX=true
 android.enableJetifier=true
 </code>
 </pre>
-                        </div>
-                    </div>
+                                    </div>
+                                </div>
 
-                    <div class="row">
-                        <div class="col-md-11">
-                            <p> Starting with Android 9.0 (API level 28), cleartext support is disabled by default. For
-                                applications <b>targetSdkVersion higher than 27</b> must use the following manifest
-                                config for AdMost <b>cleartext support.</b> </p>
-                        </div>
-                        
-                        <div class="col-md-12" id="file-androidmanifest">
-                            <pre><code class="language-markup" id="code-androidmanifest2">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <p> Starting with Android 9.0 (API level 28), cleartext support is disabled by
+                                            default. For
+                                            applications <b>targetSdkVersion higher than 27</b> must use the following
+                                            manifest
+                                            config for AdMost <b>cleartext support.</b> </p>
+                                    </div>
+
+                                    <div class="col-md-12" id="file-androidmanifest">
+                                        <pre><code class="language-markup" id="code-androidmanifest2">
 &lt;manifest ...&gt;
     &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
     &lt;application
@@ -536,18 +602,21 @@ android.enableJetifier=true
     &lt;/application&gt;
 &lt;/manifest&gt;
 				</code></pre>
-                        </div>
-                    </div>
+                                    </div>
+                                </div>
 
-               
 
-                    <div class="callout callout-danger" role="alert">
-                        <h4></h4>
-    
-                        <p><span class="label label-danger">Important</span> If you are using Admob SDK (com.google.android.gms:play-services-ads) with version
-                            <b>17.0.0 and higher</b>, you must add your <code>AdMob App ID</code> to your Android Manifest
-                            file. </p>
-                        <pre><code class="language-markup" id="code-androidmanifest2">
+
+                                <div class="callout callout-danger" role="alert">
+                                    <h4></h4>
+
+                                    <p><span class="label label-danger">Important</span> If you are using Admob SDK
+                                        (com.google.android.gms:play-services-ads) with version
+                                        <b>17.0.0 and higher</b>, you must add your <code>AdMob App ID</code> to your
+                                        Android Manifest
+                                        file.
+                                    </p>
+                                    <pre><code class="language-markup" id="code-androidmanifest2">
 &lt;manifest&gt;
     &lt;application&gt;
         &lt;!-- Sample AdMob App ID: ca-app-pub-0000000000000000~0000000000 --&gt;
@@ -557,52 +626,64 @@ android.enableJetifier=true
     &lt;/application&gt;
 &lt;/manifest&gt;
                         </code></pre>
-    
-                        <p>Your <code>App ID</code> can be found on AdMob dashboard -&gt; Apps -&gt; App settings -&gt; App info.</p>
-                        <p><img class="img-responsive" src="assets/img/admob_appid.png" alt="admob_appid.png"></p>
-                    </div>
-                    
-                    <div class="callout callout-danger" role="alert">
-                        <h4></h4>
-                        <p><span class="label label-danger">Important</span> If you are using AppLovin you must add <code>AppLovin SDK Key</code> to your <code>Android Manifest</code> file as shown below. <br/>
-         </p>
-     <pre><code class="language-markup">&lt;manifest&gt;
-    &lt;application&gt;
-        &lt;meta-data
-            android:name="applovin.sdk.key"
-            android:value="YOUR_SDK_KEY_FROM_APPLOVIN"/&gt;
-    &lt;/application&gt;
-&lt;/manifest&gt;
-     
-     </code></pre>
-                         <p>Your <code>AppLovin SDK Key</code> can be found on AppLovin Dashboard -&gt; Account -&gt; Keys.</p>
-      <p><img class="img-responsive" src="assets/img/applovin_sdkkey.png" alt="applovin_sdkkey.png"></p>
-                     </div>
 
-                    <div  id="nend_warning" style="display: none;">
-                        <div class="callout callout-danger" role="alert">
-                                <h4><span class="label label-danger">Important</span> Nend Ad-Network Usage Warning </h4>
-                                <p><b>Skip this subsection if you don't use Nend ad-network.</b></p>
-                                <p>If you use Nend network and enable shrinkResources in your app, in addition to
-                                    minifyEnabled (in build gradle file: android > buildTypes > <b>shrinkResources
-                                        true</b>),
-                                    you should have a file named <b>keep.xml</b> under res > raw folder with the following
-                                    content:<br>
-                                    <pre> <code class="language-markup">
+                                    <p>Your <code>App ID</code> can be found on AdMob dashboard -&gt; Apps -&gt; App
+                                        settings -&gt; App info.</p>
+                                    <p><img class="img-responsive" src="assets/img/admob_appid.png"
+                                            alt="admob_appid.png"></p>
+                                </div>
+
+                                <div class="callout callout-danger not-lite" role="alert">
+                                    <h4></h4>
+                                    <p><span class="label label-danger">Important</span> If you are using AppLovin you
+                                        must add <code>AppLovin SDK Key</code> to your <code>Android Manifest</code>
+                                        file as shown below. <br />
+                                    </p>
+                                    <pre><code class="language-markup">&lt;manifest&gt;
+                                &lt;application&gt;
+                                    &lt;meta-data
+                                        android:name="applovin.sdk.key"
+                                        android:value="YOUR_SDK_KEY_FROM_APPLOVIN"/&gt;
+                                &lt;/application&gt;
+                            &lt;/manifest&gt;
+                                
+                                </code></pre>
+
+                                    <p>Your <code>AppLovin SDK Key</code> can be found on AppLovin Dashboard -&gt;
+                                        Account -&gt; Keys.</p>
+                                    <p><img class="img-responsive" src="assets/img/applovin_sdkkey.png"
+                                            alt="applovin_sdkkey.png"></p>
+                                </div>
+
+                                <div id="nend_warning" style="display: none;">
+                                    <div class="callout callout-danger" role="alert">
+                                        <h4><span class="label label-danger">Important</span> Nend Ad-Network Usage
+                                            Warning </h4>
+                                        <p><b>Skip this subsection if you don't use Nend ad-network.</b></p>
+                                        <p>If you use Nend network and enable shrinkResources in your app, in addition
+                                            to
+                                            minifyEnabled (in build gradle file: android > buildTypes >
+                                            <b>shrinkResources
+                                                true</b>),
+                                            you should have a file named <b>keep.xml</b> under res > raw folder with the
+                                            following
+                                            content:<br>
+                                        <pre> <code class="language-markup">
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
     &lt;resources xmlns:tools="http://schemas.android.com/tools"
     tools:keep="@drawable/*_thumb,@drawable/*nend*"
     tools:shrinkMode="strict" /&gt;
                                     </code></pre>
-                                </p>
-                        </div>
-                    </div>
+                                        </p>
+                                    </div>
+                                </div>
 
-                    <div id="adgem_warning" style="display: none;">
-                        <div class="callout callout-danger" role="alert">
-                                    <h4><span class="label label-danger">Important</span> AdGem Ad-Network Usage Warning </h4>
-                                    <p><b>Skip this subsection if you don't use AdGem ad-network.</b></p>
-                                    <pre><code class="language-markup">
+                                <div id="adgem_warning" style="display: none;">
+                                    <div class="callout callout-danger" role="alert">
+                                        <h4><span class="label label-danger">Important</span> AdGem Ad-Network Usage
+                                            Warning </h4>
+                                        <p><b>Skip this subsection if you don't use AdGem ad-network.</b></p>
+                                        <pre><code class="language-markup">
 // Step 1: You must use Java 8 if you want to use AdGem ad-network. 
 // Add the lines inside of app's build.gradle file > 'android' tag.
 compileOptions {
@@ -621,16 +702,17 @@ offerWallEnabled="true" /&gt;
 &lt;meta-data android:name="com.adgem.Config" 
 android:resource="@xml/adgem_config"/&gt; 
                                         </code></pre>
-                                
-                        </div>
-                    </div>
-                    <div id="kidoz_warning" style="display: none;">
-                        <div class="callout callout-danger" role="alert">
-                                    <h4><span class="label label-danger">Important</span> Kidoz Ad-Network Usage Warning </h4>
-                                    <p><b>Skip this subsection if you don't use Kidoz ad-network.</b></p>
-                                    Add following lines to AndroidManifest.xml file under application tag.
-    
-                                    <pre><code class="language-markup">
+
+                                    </div>
+                                </div>
+                                <div id="kidoz_warning" style="display: none;">
+                                    <div class="callout callout-danger" role="alert">
+                                        <h4><span class="label label-danger">Important</span> Kidoz Ad-Network Usage
+                                            Warning </h4>
+                                        <p><b>Skip this subsection if you don't use Kidoz ad-network.</b></p>
+                                        Add following lines to AndroidManifest.xml file under application tag.
+
+                                        <pre><code class="language-markup">
 &lt;receiver android:name="com.kidoz.sdk.api.receivers.SdkReceiver" android:enabled="true" &gt;
     &lt;intent-filter&gt;
         &lt;action android:name="android.intent.action.PACKAGE_ADDED"/&gt;
@@ -638,15 +720,19 @@ android:resource="@xml/adgem_config"/&gt;
     &lt;/intent-filter&gt;
 &lt;/receiver>&gt;
                                     </code></pre>
-        
-                                    </p>
-                        </div>
-                    </div>
 
-                 <h3 id="proguard">Proguard</h3>  
-                 <p>If you are using proguard. Copy & paste following code snippet in to your <code>/app/src/proguard-rules.pro</code> file</p>
+                                        </p>
+                                    </div>
+                                </div>
 
-                 <pre class="pre-scrollable"><code class="language-typescript" id="code-proguard">
+                                <h3 id="proguard">Proguard</h3>
+                                <p>If you are using proguard. Copy & paste following code snippet in to your
+                                    <code>/app/src/proguard-rules.pro</code> file
+                                </p>
+
+
+                                <pre class="pre-scrollable not-lite">
+    <code class="language-typescript" id="code-proguard">
 # ADMOST
 -keepattributes Exceptions, InnerClasses
 -dontwarn admost.sdk.**
@@ -663,12 +749,7 @@ android:resource="@xml/adgem_config"/&gt;
 -keep class com.google.android.exoplayer2.**{ *;}
 -keep class android.support.v4.app.DialogFragment { *; }
 -keep class android.support.v4.util.LruCache { *; }
-
-
-# VOLLEY
--keep class com.android.volley.** { *; }
--keep interface com.android.volley.** { *; }
--keep class org.apache.commons.logging.**
+                        
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -723,6 +804,10 @@ public static final ** CREATOR;
 public static &lt;fields&gt;;
 }
 
+#AFA
+-dontwarn com.admost.**
+-keep class com.admost.** {*;}
+
 # AMAZON
 -dontwarn com.amazon.**
 -keep class com.amazon.** { *; }
@@ -736,17 +821,6 @@ public static &lt;fields&gt;;
 # APPNEXT
 -keep class com.appnext.** { *; }
 -dontwarn com.appnext.**
-
-# APPSAMURAI
--keepclassmembers,allowobfuscation class * {
-    @com.google.gson.annotations.SerializedName &lt;fields&gt;;
-}
-
-# AVOCARROT - GLISPA
--keep class com.avocarrot.** { *; }
--dontwarn com.avocarrot.**
--keep class com.google.android.exoplayer2.SimpleExoPlayer
--dontwarn com.google.android.exoplayer2.SimpleExoPlayer
 
 # CHARTBOOST
 -dontwarn org.apache.http.**
@@ -993,12 +1067,9 @@ public static &lt;fields&gt;;
 -keep public class com.tappx.** { *; }
 -dontwarn com.tappx.**
 
-#TIKTOK
--keep class com.bytedance.sdk.openadsdk.** { *; }
--keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
--keep class com.pgl.sys.ces.** {*;}
--keep class com.bytedance.embed_dr.** {*;}
--keep class com.bytedance.embedapplog.** {*;}
+#PANGLE
+-dontwarn com.bytedance.**
+-keep class com.bytedance.** {*;}
 
 # UNITY
 -dontwarn com.unity3d.**
@@ -1058,22 +1129,95 @@ public static &lt;fields&gt;;
 public *;
 }
 -keep class com.verizon.ads**
-</code>
-            </pre>     
-                <h2 id="usage">Usage</h2>
+    </code>
+</pre>
 
-                <h3 id="initialization">Initialization</h3>
-                <p>
-                    To initialize Admost Mediation SDK, import <code>'package:admost_flutter_plugin/admost.dart';</code> to your file;
-                </p>
-                
+                                <pre class="pre-scrollable is-lite">
+    <code class="language-typescript" id="code-proguard">
+        # ADMOST
+        -keepattributes Exceptions, InnerClasses
+        -dontwarn admost.sdk.**
+        -keep class admost.sdk.** {*;}
+        -dontwarn com.amr.unity.**
+        -keep class com.amr.unity.** {*;}
+        -dontwarn admost.adserver.**
+        -keep class com.adjust.sdk.** {*;}
+        -dontwarn com.adjust.sdk.**
+        -keep class com.appsflyer.** {*;}
+        -dontwarn com.appsflyer.**
+        -keep class admost.adserver.** { *; }
+        -dontwarn com.google.android.exoplayer2.**
+        -keep class com.google.android.exoplayer2.**{ *;}
+        -keep class android.support.v4.app.DialogFragment { *; }
+        -keep class android.support.v4.util.LruCache { *; }
+        
+        # ADMOB / ADX / GOOGLE
+        -keep class com.android.vending.billing.**
+        -keep public class com.google.android.gms.ads.** { public *; }
+        -keep public class com.google.ads.** { public *; }
+        -keep class com.google.android.gms.** { *; }
+        -dontwarn com.google.android.gms.**
+        -keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable { public static final *** NULL; }
+        -keepnames class * implements android.os.Parcelable
+        -keepclassmembers class * implements android.os.Parcelable { public static final *** CREATOR; }
+        -keep @interface android.support.annotation.Keep
+        -keep @android.support.annotation.Keep class *
+        -keepclasseswithmembers class * { @android.support.annotation.Keep &lt;fields&gt;; }
+        -keepclasseswithmembers class * { @android.support.annotation.Keep &lt;methods&gt;; }
+        -keep @interface com.google.android.gms.common.annotation.KeepName
+        -keepnames @com.google.android.gms.common.annotation.KeepName class *
+        -keepclassmembernames class * { @com.google.android.gms.common.annotation.KeepName *; }
+        -keep @interface com.google.android.gms.common.util.DynamiteApi
+        -keep public @com.google.android.gms.common.util.DynamiteApi class * { public &lt;fields&gt;; public &lt;methods&gt;; }
+        -keep public @com.google.android.gms.common.util.DynamiteApi class * { *; }
+        -keep class com.google.android.apps.common.proguard.UsedBy*
+        -keep @com.google.android.apps.common.proguard.UsedBy* class *
+        -keepclassmembers class * { @com.google.android.apps.common.proguard.UsedBy* *; }
+        -dontwarn android.security.NetworkSecurityPolicy
+        -dontwarn android.app.Notification
+        
+        # FACEBOOK
+        -dontwarn com.facebook.ads.**
+        -dontnote com.facebook.ads.**
+        -keep class com.facebook.** { *; }
+        -keepattributes Signature
+        -keep class com.google.android.exoplayer2.** {*;}
+        -dontwarn com.google.android.exoplayer2.**
+        
+        # MINTEGRAL
+        -keepattributes Signature
+        -keepattributes *Annotation*
+        -keep class com.mbridge.** {*; }
+        -keep interface com.mbridge.** {*; }
+        -keep interface androidx.** { *; }
+        -keep class androidx.** { *; }
+        -keep public class * extends androidx.** { *; }
+        -dontwarn com.mbridge.**
+        
+        #PANGLE
+        -dontwarn com.bytedance.**
+        -keep class com.bytedance.** {*;}
+        -keep class **.R$* { public static final int mbridge*; }
+    </code>
+</pre>
 
-                <pre><code class="language-dart">import 'package:admost_flutter_plugin/admost.dart'; </code></pre>
 
-                <p>and initialize AMRSDK with <code>Admost.initialize()</code>
-                </p>
 
-                <pre><code class="language-dart">
+                                <h2 id="usage">Usage</h2>
+
+                                <h3 id="initialization">Initialization</h3>
+                                <p>
+                                    To initialize Admost Mediation SDK, import
+                                    <code>'package:admost_flutter_plugin/admost.dart';</code> to your file;
+                                </p>
+
+
+                                <pre><code class="language-dart">import 'package:admost_flutter_plugin/admost.dart'; </code></pre>
+
+                                <p>and initialize AMRSDK with <code>Admost.initialize()</code>
+                                </p>
+
+                                <pre><code class="language-dart">
 Admost.initialize(
     appId: Platform.isIOS
         ? "15066ddc-9c18-492c-8185-bea7e4c7f88c"
@@ -1084,43 +1228,57 @@ Admost.initialize(
 }
                 </code></pre>
 
-                
 
-                <p>For testing you can use following Application Id;</p>
 
-                <pre><code class="language-markup">
+                                <p>For testing you can use following Application Id;</p>
+
+                                <pre><code class="language-markup">
 IOS Application Id: "15066ddc-9c18-492c-8185-bea7e4c7f88c"
 Android Application Id: "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe"
 
                 </code></pre>
 
-                <h4 id="initgdpr">GDPR and CCPA</h4>
-                <p> Once you have collected the user’s consent, you can pass it onto the SDK using the init configuration parameters shown above.  </p>
-                 <p><code>userConsent</code> has a boolean parameter. If you have the user’s consent, set it YES. If you do not have the user's consent, set it NO.  </p>
-                 <p><code>subjectToGDPR</code> has a boolean parameter. If you know the user is subject to GDPR, set it YES. If you know the user is not subject to GDPR, set it NO. </p>
-                 <p><code>subjectToCCPA</code> has a boolean parameter. If you know the user is subject to CCPA, set it YES. If you know the user is not subject to CCPA, set it NO. </p>
-                <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the rules described in  <a target="_blank" href="https://admost.github.io/privacy.html#gdprrules">GDPR</a>  have been applied.  </p>
-                <p>If you don’t pass the user’s consent or subjectToCCPA to the SDK, the rules described in  <a target="_blank" href="https://admost.github.io/privacy.html#ccparules">CCPA</a>  have been applied.  </p>
+                                <h4 id="initgdpr">GDPR and CCPA</h4>
+                                <p> Once you have collected the user’s consent, you can pass it onto the SDK using the
+                                    init configuration parameters shown above. </p>
+                                <p><code>userConsent</code> has a boolean parameter. If you have the user’s consent, set
+                                    it YES. If you do not have the user's consent, set it NO. </p>
+                                <p><code>subjectToGDPR</code> has a boolean parameter. If you know the user is subject
+                                    to GDPR, set it YES. If you know the user is not subject to GDPR, set it NO. </p>
+                                <p><code>subjectToCCPA</code> has a boolean parameter. If you know the user is subject
+                                    to CCPA, set it YES. If you know the user is not subject to CCPA, set it NO. </p>
+                                <p>If you don’t pass the user’s consent or subjectToGDPR to the SDK, the rules described
+                                    in <a target="_blank"
+                                        href="https://admost.github.io/privacy.html#gdprrules">GDPR</a> have been
+                                    applied. </p>
+                                <p>If you don’t pass the user’s consent or subjectToCCPA to the SDK, the rules described
+                                    in <a target="_blank"
+                                        href="https://admost.github.io/privacy.html#ccparules">CCPA</a> have been
+                                    applied. </p>
 
 
-                <h3 id="banner-ads">Banner Ads</h3>
+                                <h3 id="banner-ads">Banner Ads</h3>
 
-                <p>
-                    <span class="label label-danger">Important</span>
-                    Default banner size changed from Fullscreen width to 320x50, 728x90 and 300x250.<br/>
-                    If you are using 320x90 banner, please contact with your account manager.<br/>
-                </p>
+                                <p>
+                                    <span class="label label-danger">Important</span>
+                                    Default banner size changed from Fullscreen width to 320x50, 728x90 and
+                                    300x250.<br />
+                                    If you are using 320x90 banner, please contact with your account manager.<br />
+                                </p>
 
-                <p>There are 3 types of banner size; 320x50, 728x90 and 300x250 banner.<br/><br/></p>
+                                <p>There are 3 types of banner size; 320x50, 728x90 and 300x250 banner.<br /><br /></p>
 
-                <p>To create and show a banner ad first import <code>'package:admost_flutter_plugin/admost_banner.dart';</code> and <code>'package:admost_flutter_plugin/admost_banner_size.dart';</code> to your
-                 file
-                </p>
+                                <p>To create and show a banner ad first import
+                                    <code>'package:admost_flutter_plugin/admost_banner.dart';</code> and
+                                    <code>'package:admost_flutter_plugin/admost_banner_size.dart';</code> to your
+                                    file
+                                </p>
 
-                <p>
-                    Also if you want handle ad events, import <code>'package:admost_flutter_plugin/admost_ad_events.dart';</code>
-                </p>
-                <pre><code class="language-dart">
+                                <p>
+                                    Also if you want handle ad events, import
+                                    <code>'package:admost_flutter_plugin/admost_ad_events.dart';</code>
+                                </p>
+                                <pre><code class="language-dart">
 // main.dart
 
 import 'package:admost_flutter_plugin/admost_banner.dart';
@@ -1129,8 +1287,10 @@ import 'package:admost_flutter_plugin/admost_banner_size.dart';
 import 'package:admost_flutter_plugin/admost_ad_events.dart'
 
                 </code></pre>
-                <p>Then declare your banner with <code>AdmostBanner</code> and handle ad events with <code>listener:</code></p> 
-                <pre><code class="language-dart">
+                                <p>Then declare your banner with <code>AdmostBanner</code> and handle ad events with
+                                    <code>listener:</code>
+                                </p>
+                                <pre><code class="language-dart">
 AdmostBanner(
     adUnitId: Platform.isIOS
         ? "b4009772-de04-42c4-bbaa-c18da9e4a1ab"
@@ -1151,18 +1311,19 @@ AdmostBanner(
     },
 )                          
                 </code></pre>
-                <p>For testing you can use following Banner Zone Id; </p>
+                                <p>For testing you can use following Banner Zone Id; </p>
 
-                <pre><code class="language-markup">
+                                <pre><code class="language-markup">
 IOS Banner Zone Id: "b4009772-de04-42c4-bbaa-c18da9e4a1ab"
 Android Banner Zone Id: "9fb970db-7d96-4ef2-ac8c-d88ec22270ff"
 
                 </code></pre>
-                
-                <p>
-                    Optionally you can set the width of the banner, default value is 320px for 50px banner, 728px for 90px banner, 300px for 250px banner.
-                </p>
-                <pre><code class="language-dart">
+
+                                <p>
+                                    Optionally you can set the width of the banner, default value is 320px for 50px
+                                    banner, 728px for 90px banner, 300px for 250px banner.
+                                </p>
+                                <pre><code class="language-dart">
 AdmostBanner(
     .
     .
@@ -1170,10 +1331,10 @@ AdmostBanner(
     listener: ..,
 ) 
                 </code></pre>
-            
-                <p>There are 3 event in <code>AdmostBanner</code></p>
 
-                    <pre><code class="language-dart">
+                                <p>There are 3 event in <code>AdmostBanner</code></p>
+
+                                <pre><code class="language-dart">
 AdmostBanner(
     ...
     listener: (AdmostAdEvent event, Map<String, dynamic> args) {
@@ -1190,27 +1351,28 @@ AdmostBanner(
 ) 
                     </code></pre>
 
-                    <code>loaded</code> state is returned when banner received.</p>
+                                <code>loaded</code> state is returned when banner received.</p>
 
-                </p>
+                                </p>
 
-                <pre><code class="language-dart"> 
+                                <pre><code class="language-dart"> 
 if (event == AdmostAdEvent.loaded) {
     // It indicates that the Banner ad is loaded.
 }     </code></pre>
 
-                 <code>clicked</code> state is returned when banner clicked.</p>
+                                <code>clicked</code> state is returned when banner clicked.</p>
 
-                <pre><code class="language-dart"> 
+                                <pre><code class="language-dart"> 
 if (event == AdmostAdEvent.clicked) {
     // It indicates that the banner ad is clicked.
 }  
                  </code></pre>
-                 <p>If <code>failedToLoad</code> state is returned investigate error to adress the problem.
+                                <p>If <code>failedToLoad</code> state is returned investigate error to adress the
+                                    problem.
 
-                 </p>
- 
-                 <pre><code class="language-dart"> 
+                                </p>
+
+                                <pre><code class="language-dart"> 
  if (event == AdmostAdEvent.failedToLoad) {
     // It indicates that the banner ad received no-fill response from all of its placements.
     print("Error code: ${args['errorCode']}");
@@ -1218,32 +1380,43 @@ if (event == AdmostAdEvent.clicked) {
  }     </code></pre>
 
 
-                <h3 id="native-ads">Customize Native Ad Appearance (Optional)</h3>
-                    <p>You can change the appearance of native ads to suit your application's design.</p>
-                    <p>To create and show a native ad you need import <code>'package:admost_flutter_plugin/admost_native_ad.dart';</code>to your
-                        file
-                       </p>
-                       <pre><code class="language-dart"> import 'package:admost_flutter_plugin/admost_native_ad.dart';</code></pre>
-                <h3 id="native-ads-ios">IOS Native Ad</h3>
+                                <h3 id="native-ads" class="not-lite">Customize Native Ad Appearance (Optional)</h3>
+                                <p class="not-lite">You can change the appearance of native ads to suit your
+                                    application's design.</p>
+                                <p class="not-lite">To create and show a native ad you need import
+                                    <code>'package:admost_flutter_plugin/admost_native_ad.dart';</code>to your
+                                    file
+                                </p>
+                                <pre
+                                    class="not-lite"><code class="language-dart"> import 'package:admost_flutter_plugin/admost_native_ad.dart';</code></pre>
+                                <h3 class="not-lite" id="native-ads-ios">IOS Native Ad</h3>
 
-                <p> To add native ads on IOS , download the <a target="_blank" download="CustomXibs.zip" href="https://download.admost.com/CustomXibs.zip">CustomXibs.zip</a> file and extract in <code>&lt;your project&gt;/ios/Runner</code> path.</p>
+                                <p class="not-lite"> To add native ads on IOS , download the <a target="_blank"
+                                        download="CustomXibs.zip"
+                                        href="https://download.admost.com/CustomXibs.zip">CustomXibs.zip</a> file and
+                                    extract in <code>&lt;your project&gt;/ios/Runner</code> path.</p>
 
-                <p>You can change the layout and design of following assets; </p>
+                                <p class="not-lite">You can change the layout and design of following assets; </p>
 
-                <img class="img-responsive " src="assets/img/native_customization.png" alt="shadowed image">
+                                <img class="img-responsive not-lite" src="assets/img/native_customization.png"
+                                    alt="shadowed image">
 
-                <p>If you want to use your own layouts you can create a copy and modify one of the custom sized samples (CustomNative150x250.xib, CustomNative200x200.xib or CustomNative300x120.xib) and change their frame to fit your design. </p>
+                                <p class="not-lite">If you want to use your own layouts you can create a copy and modify
+                                    one of the custom sized samples (CustomNative150x250.xib, CustomNative200x200.xib or
+                                    CustomNative300x120.xib) and change their frame to fit your design. </p>
 
-  <img class="img-responsive " src="assets/img/custom_natives.png" alt="shadowed image">
+                                <img class="img-responsive not-lite" src="assets/img/custom_natives.png"
+                                    alt="shadowed image">
 
-  <p>After creating your native xib file on the iOS side, then declare your banner with <code>AdmostNativeAd</code>.
-     You must pass the <code>xibNameForIOS:</code> parameter. </p>
-  <pre><code class="language-dart">
+                                <p class="not-lite">After creating your native xib file on the iOS side, then declare
+                                    your banner with <code>AdmostNativeAd</code>.
+                                    You must pass the <code>xibNameForIOS:</code> parameter. </p>
+                                <pre class="not-lite"><code class="language-dart">
    
         xibNameForIOS: 'AMRNativeAdBaseView250',
      
-</code></pre>
-	<pre><code class="language-dart">
+</code class="not-lite"></pre>
+                                <pre class="not-lite"><code class="language-dart">
 AdmostNativeAd(
     adUnitId: Platform.isIOS
         ? 'c72a4a52-23c5-4c34-9eb1-7bbc4c08c7e4'
@@ -1264,13 +1437,14 @@ AdmostNativeAd(
         }
     },
 )
-</code></pre>
+</code class="not-lite"></pre>
 
-                <h3 id="native-ads-android">Android Native Ad</h3>
-                <p>For Android, you can follow the following steps; </p>
-                <ol>
-                    <li>Define a layout file in the android layout folder for your custom native design</li>
-                    <pre><code class="language-markup">
+                                <h3 class="not-lite" id="native-ads-android">Android Native Ad</h3>
+                                <p class="not-lite">For Android, you can follow the following steps; </p>
+                                <ol class="not-lite">
+                                    <li>Define a layout file in the android layout folder for your custom native design
+                                    </li>
+                                    <pre><code class="language-markup">
                         &lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="120dp"
@@ -1394,8 +1568,9 @@ AdmostNativeAd(
 
 &lt/LinearLayout&gt;
                     </code></pre>
-                    <li>Create a AdMostViewBinder object in the MainActivity and assign this object as the static native binder</li>
-                    <pre><code class="language-kotlin">
+                                    <li class="not-lite">Create a AdMostViewBinder object in the MainActivity and assign
+                                        this object as the static native binder</li>
+                                    <pre class="not-lite"><code class="language-kotlin">
 val binder: AdMostViewBinder = admost.sdk.AdMostViewBinder.Builder(R.layout.custom_layout_flutter)
                 .iconImageId(R.id.cardIcon)
                 .titleId(R.id.cardTitle)
@@ -1410,15 +1585,16 @@ val binder: AdMostViewBinder = admost.sdk.AdMostViewBinder.Builder(R.layout.cust
 
 AdmostFLTNativeAdBinder.getInstance().binder = binder;
                     </code></pre>
-                </ol>
+                                </ol>
 
-                <h3 id="interstitial-ads">Interstitial Ads</h3>
+                                <h3 id="interstitial-ads">Interstitial Ads</h3>
 
-                <p>To create and show an interstitial ad first import <code>'package:admost_flutter_plugin/admost_interstitial.dart';</code> to your
-                    file and declare an <code>AdmostInterstitial</code> object;
-                </p>
+                                <p>To create and show an interstitial ad first import
+                                    <code>'package:admost_flutter_plugin/admost_interstitial.dart';</code> to your
+                                    file and declare an <code>AdmostInterstitial</code> object;
+                                </p>
 
-                <pre><code class="language-dart">
+                                <pre><code class="language-dart">
 import 'package:admost_flutter_plugin/admost.dart';
 import 'package:admost_flutter_plugin/admost_interstitial.dart';
 .
@@ -1450,15 +1626,15 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
 }
                 </code></pre>
 
-                <p>For testing you can use following Interstitial Zone Id;</p>
+                                <p>For testing you can use following Interstitial Zone Id;</p>
 
-                <pre><code class="language-markup">
+                                <pre><code class="language-markup">
 IOS Interstitial Zone Id: "39f74377-5682-436a-9338-9d1c4df410bd"
 Android Interstitial Zone Id: "f99e409b-f9ab-4a2e-aa9a-4d143e6809ae"
                 </code></pre>
 
-                <p>There are 6 state in <code>AdmostInterstitial</code>.</p>
-                <pre><code class="language-markup">
+                                <p>There are 6 state in <code>AdmostInterstitial</code>.</p>
+                                <pre><code class="language-markup">
 AdmostInterstitial(
     zoneId: Platform.isIOS
         ? '39f74377-5682-436a-9338-9d1c4df410bd'
@@ -1492,70 +1668,79 @@ AdmostInterstitial(
     },
 );
                 </code></pre>
-                <p>
+                                <p>
 
 
-                    When <code>isLoaded</code> is <code>true</code> just call the <code>.show()</code>
-                    method to present interstitial.</p>
+                                    When <code>isLoaded</code> is <code>true</code> just call the <code>.show()</code>
+                                    method to present interstitial.</p>
 
-                <pre><code class="language-dart">  if (await interstitialAd.isLoaded) {
+                                <pre><code class="language-dart">  if (await interstitialAd.isLoaded) {
     interstitialAd.show();
 } else {
     interstitialAd.load();
 }</code></pre>
-                
 
-            <p>If <code>failedToLoad</code> state is returned investigate <code>error</code> to adress the problem. </p>
-                <p>
-                    <span class="label label-danger">Important</span> Attempting to load a new interstitial from the
-                    <code>failedToLoad</code>
-                    methods is strongly discouraged.
-                </p>
 
-                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
+                                <p>If <code>failedToLoad</code> state is returned investigate <code>error</code> to
+                                    adress the problem. </p>
+                                <p>
+                                    <span class="label label-danger">Important</span> Attempting to load a new
+                                    interstitial from the
+                                    <code>failedToLoad</code>
+                                    methods is strongly discouraged.
+                                </p>
+
+                                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
-<p><code>failedToShow</code> event state is returned to inform the application that the received interstitial failed to be shown.
-    This delegate expected to be returned very rarely but if it is returned you should either load another interstitial or resume tasks.
-    </p>
-                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
+                                <p><code>failedToShow</code> event state is returned to inform the application that the
+                                    received interstitial failed to be shown.
+                                    This delegate expected to be returned very rarely but if it is returned you should
+                                    either load another interstitial or resume tasks.
+                                </p>
+                                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
-             
 
-                <p><code>opened</code> state is returned to inform the application that the received interstital is shown.</p>
-                <pre><code class="language-markup"> if (event == AdmostAdEvent.opened) {
+
+                                <p><code>opened</code> state is returned to inform the application that the received
+                                    interstital is shown.</p>
+                                <pre><code class="language-markup"> if (event == AdmostAdEvent.opened) {
     // It indicates that the interstitial ad is showed.
 }</code></pre>
 
 
-               <code>clicked</code> state is returned when interstital clicked.</p>
+                                <code>clicked</code> state is returned when interstital clicked.</p>
 
-                <pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
+                                <pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
     // Interstitial Ad clicked. 
     print("Network: ${args['network']}");
 }</code></pre>
-                
 
-                <p><code>dismissed</code> state is returned to inform the application that the
-                    interstitial is closed by clicking cross button/back button. You can use this callback to resume paused tasks during
-                    interstitial presentation.</p>
-                <p>
-                    You can use <code>dismissed</code> callback and reload a interstitial ad.
-                </p>
-                <pre><code class="language-dart">if (event == AdmostAdEvent.dismissed) {
+
+                                <p><code>dismissed</code> state is returned to inform the application that the
+                                    interstitial is closed by clicking cross button/back button. You can use this
+                                    callback to resume paused tasks during
+                                    interstitial presentation.</p>
+                                <p>
+                                    You can use <code>dismissed</code> callback and reload a interstitial ad.
+                                </p>
+                                <pre><code class="language-dart">if (event == AdmostAdEvent.dismissed) {
     // Interstitial Ad dismissed. 
 }</code></pre>
 
-                <h3 id="rewarded-video-ads">Rewarded Video Ads</h3>
+                                <h3 id="rewarded-video-ads">Rewarded Video Ads</h3>
 
-                <p>Rewarded video ads integration is pretty similar to Interstitial ads with 2 additional event. To create and show a rewarded video ad
-                    first import
-                    <code>'package:admost_flutter_plugin/admost_rewarded.dart'</code> to your file and declare an <code>AdmostRewarded</code> property;</p>
+                                <p>Rewarded video ads integration is pretty similar to Interstitial ads with 2
+                                    additional event. To create and show a rewarded video ad
+                                    first import
+                                    <code>'package:admost_flutter_plugin/admost_rewarded.dart'</code> to your file and
+                                    declare an <code>AdmostRewarded</code> property;
+                                </p>
 
-                <pre><code class="language-dart">
+                                <pre><code class="language-dart">
 import 'package:admost_flutter_plugin/admost.dart';
 import 'package:admost_flutter_plugin/admost_rewarded.dart';
 .
@@ -1606,16 +1791,16 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
 }
                 </code></pre>
 
-                <p>For testing you can use following RewardedVideo Zone Id;</p>
+                                <p>For testing you can use following RewardedVideo Zone Id;</p>
 
-                <pre><code
+                                <pre><code
                         class="language-markup">
 IOS RewardedVideo Zone Id: "2bdefd44-5269-4cbc-b93a-373b74a2f067"
 Android RewardedVideo Zone Id: "88cfcfd0-2f8c-4aba-9f36-cc0ac99ab140"
                 </code></pre>
 
-                <p>There are 7 event methods in <code>AdmostRewarded</code>.</p>
-                <pre><code class="language-markup">
+                                <p>There are 7 event methods in <code>AdmostRewarded</code>.</p>
+                                <pre><code class="language-markup">
 AdmostRewarded(
     zoneId: Platform.isIOS
         ? '2bdefd44-5269-4cbc-b93a-373b74a2f067'
@@ -1644,11 +1829,11 @@ AdmostRewarded(
     },
 );
                 </code></pre>
-                    <p>
-                        When <code>isLoaded</code> is <code>true</code> just call the <code>.show()</code>
-                        method to present rewarded video.</p>
-    
-                    <pre><code class="language-dart">  if (await rewardAd.isLoaded) {
+                                <p>
+                                    When <code>isLoaded</code> is <code>true</code> just call the <code>.show()</code>
+                                    method to present rewarded video.</p>
+
+                                <pre><code class="language-dart">  if (await rewardAd.isLoaded) {
     rewardAd.show();
 } else {
     rewardAd.load();
@@ -1656,271 +1841,304 @@ AdmostRewarded(
 
 
 
-<p>If <code>failedToLoad</code> state is returned investigate <code>error</code> to adress the problem. </p>
-                <p>
-                    <span class="label label-danger">Important</span> Attempting to load a new rewarded video from the
-                    <code>failedToLoad</code>
-                    methods is strongly discouraged.
-                </p>
+                                <p>If <code>failedToLoad</code> state is returned investigate <code>error</code> to
+                                    adress the problem. </p>
+                                <p>
+                                    <span class="label label-danger">Important</span> Attempting to load a new rewarded
+                                    video from the
+                                    <code>failedToLoad</code>
+                                    methods is strongly discouraged.
+                                </p>
 
-                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
+                                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToLoad) {
     // It indicates that the rewarded ad received no-fill response from all of its placements.
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
 
-<p><code>opened</code> state is returned to inform the application that the received rewarded video is shown.</p>
-                <pre><code class="language-markup"> if (event == AdmostAdEvent.opened) {
+                                <p><code>opened</code> state is returned to inform the application that the received
+                                    rewarded video is shown.</p>
+                                <pre><code class="language-markup"> if (event == AdmostAdEvent.opened) {
     // It indicates that the rewarded ad is showed.
 }</code></pre>
 
-<p><code>failedToShow</code> event state is returned to inform the application that the received rewarded video failed to be shown.
-    This delegate expected to be returned very rarely but if it is returned you should either load another reward video or resume tasks.
-    </p>
-                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
+                                <p><code>failedToShow</code> event state is returned to inform the application that the
+                                    received rewarded video failed to be shown.
+                                    This delegate expected to be returned very rarely but if it is returned you should
+                                    either load another reward video or resume tasks.
+                                </p>
+                                <pre><code class="language-dart"> if (event == AdmostAdEvent.failedToShow) {
     // Indicates that the rewarded ad was received but there was a problem while it was showing.
     print("Error code: ${args['errorCode']}");
     print("Error message: ${args['errorMessage']}");
 }</code></pre>
 
-<p><code>clicked</code> state is returned when rewarded video clicked.</p>
+                                <p><code>clicked</code> state is returned when rewarded video clicked.</p>
 
-<pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
+                                <pre><code class="language-dart">if (event == AdmostAdEvent.clicked) {
     // It indicates that the rewarded ad clicked.
     print("Network: ${args['network']}");
 }</code></pre>
 
 
 
-<p><code>completed</code> state is returned to inform the application that the user completed watching the video <b><u>to a certain point</u></b> to get the reward. The video may have finished or keep playing after <code>completed</code> is returned. Use this state to reward the user.</p>
-<p>
-    <span class="label label-danger">Important</span> Attempting to load a new rewarded video from the
-    <code>completed</code>
-    states is strongly discouraged.
-</p>
+                                <p><code>completed</code> state is returned to inform the application that the user
+                                    completed watching the video <b><u>to a certain point</u></b> to get the reward. The
+                                    video may have finished or keep playing after <code>completed</code> is returned.
+                                    Use this state to reward the user.</p>
+                                <p>
+                                    <span class="label label-danger">Important</span> Attempting to load a new rewarded
+                                    video from the
+                                    <code>completed</code>
+                                    states is strongly discouraged.
+                                </p>
 
-<pre><code class="language-dart">if (event == AdmostAdEvent.completed) {
+                                <pre><code class="language-dart">if (event == AdmostAdEvent.completed) {
     // It indicates that the user deserves to receive a reward. You may need to store this information in a variable and give a reward
     player.reward();
   }
 </code></pre>
 
 
-                <p><code>dismissed</code> state is returned to inform the application that the
-                    rewarded video is closed by clicking cross button/back button. You can use this state to resume paused tasks during
-                    rewarded video presentation.
-        <p>
-            You can use <code>dismissed</code> state and reload a new rewarded video ad.
-        </p>
+                                <p><code>dismissed</code> state is returned to inform the application that the
+                                    rewarded video is closed by clicking cross button/back button. You can use this
+                                    state to resume paused tasks during
+                                    rewarded video presentation.
+                                <p>
+                                    You can use <code>dismissed</code> state and reload a new rewarded video ad.
+                                </p>
 
-                <pre><code class="language-dart">if (event == AdmostAdEvent.dismissed) {
+                                <pre><code class="language-dart">if (event == AdmostAdEvent.dismissed) {
     animation.resume();
 } 
 </code></pre>
 
 
+                                <div class="not-lite">
+                                    <h2 id="extras">Extras</h2>
 
-                <h2 id="extras">Extras</h2>
+                                    <h3 id="testsuite">Test Suite</h3>
 
-                <h3 id="testsuite">Test Suite</h3>
+                                    <p>
+                                        You can use Test Suite to test your ad networks with your zone ids.
+                                    </p>
 
-                <p>
-                	You can use Test Suite to test your ad networks with your zone ids.
-                </p>
+                                    <p>
+                                    <div class="callout callout-danger" role="alert">
+                                        <p class="text-danger">You must be a Tester to show Test Suite on devices.</p>
+                                    </div>
+                                    </p>
 
-                <p>
-                    <div class="callout callout-danger" role="alert">
-                        <p class="text-danger">You must be a Tester to show Test Suite on devices.</p>
-                    </div>
-                </p>
+                                    <p>
+                                        To use Test Suite in your application, you can use one of the following codes;
+                                    </p>
 
-                <p>
-                	To use Test Suite in your application, you can use one of the following codes;
-                </p>
-
-                <pre><code class="language-dart">
-Admost.startTestSuite(Platform.isIOS
-    ? "15066ddc-9c18-492c-8185-bea7e4c7f88c"
-    : "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe");
+                                    <pre><code class="language-dart">
+        Admost.startTestSuite(Platform.isIOS
+            ? "15066ddc-9c18-492c-8185-bea7e4c7f88c"
+        : "6cc8e89a-b52a-4e9a-bb8c-579f7ec538fe");
                 </code></pre>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="promo left small-icon">
-                            <i class="fa fa-apple"></i>
-                            <h3>Screen Shot</h3>
-                            <img class="img-responsive" src="assets/img/ios_testsuite.png" alt="shadowed image">
-                        </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="promo left small-icon">
+                                                <i class="fa fa-apple"></i>
+                                                <h3>Screen Shot</h3>
+                                                <img class="img-responsive" src="assets/img/ios_testsuite.png"
+                                                    alt="shadowed image">
+                                            </div>
 
-                    </div>
-                    <div class="col-md-6">
-                        <div class="promo left small-icon">
-                            <i class="fa fa-android"></i>
-                            <h3>Screen Shot</h3>
-                            <img class="img-responsive" src="assets/img/android_testsuite.png?v=1"
-                                alt="android-test-suite screenshot">
-                        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="promo left small-icon">
+                                                <i class="fa fa-android"></i>
+                                                <h3>Screen Shot</h3>
+                                                <img class="img-responsive" src="assets/img/android_testsuite.png?v=1"
+                                                    alt="android-test-suite screenshot">
+                                            </div>
 
-                    </div>
-                </div>
+                                        </div>
+                                    </div>
 
-                <h3 id="iap">In App Purchase Tracking</h3>
-                <br/>
+                                    <h3 id="iap">In App Purchase Tracking</h3>
+                                    <br />
 
-                <h4 id="iap-ios">IAP IOS</h3>
+                                    <h4 id="iap-ios">IAP IOS</h3>
 
-                <p>
-                    The following method is used to track purchases with receipt validation in ios:
-                </p>
+                                        <p>
+                                            The following method is used to track purchases with receipt validation in
+                                            ios:
+                                        </p>
 
-				<pre>
-<code class="language-dart">
-    Admost.trackIAPForIOS(transactionId, currency, amount, ['tag1', 'tag2']);
+                                        <pre>
+        <code class="language-dart">
+            Admost.trackIAPForIOS(transactionId, currency, amount, ['tag1', 'tag2']);
 
 					</code>
                 </pre>
 
-             
 
-				<p>Explanation of Parameters:</p>
-				<ul>
-					<li><b>transactionId</b> – Transaction identifier of SKPaymentTransaction.
-					</li>
-					<li><b>currencyCode</b> – Currency code of transaction.
-					</li>
-					<li><b>amount</b> – Amount of transaction.
-					</li>
-                    <li><b>tags</b> – You can use to analyze and differentiate the purchases.
-					</li>
-				</ul>
 
-               <br/>
-                <h4 id="iap-android">IAP Android </h3>
+                                        <p>Explanation of Parameters:</p>
+                                        <ul>
+                                            <li><b>transactionId</b> – Transaction identifier of SKPaymentTransaction.
+                                            </li>
+                                            <li><b>currencyCode</b> – Currency code of transaction.
+                                            </li>
+                                            <li><b>amount</b> – Amount of transaction.
+                                            </li>
+                                            <li><b>tags</b> – You can use to analyze and differentiate the purchases.
+                                            </li>
+                                        </ul>
 
-                <p>
-                    The following method is used to track purchases with receipt validation in android:
-                </p>
-                <pre><code class="language-dart">Admost.trackIAPForAndroid(originalJSON, signature, currency, amount, ['tag1', 'tag2'])
+                                        <br />
+                                        <h4 id="iap-android">IAP Android </h3>
+
+                                            <p>
+                                                The following method is used to track purchases with receipt validation
+                                                in android:
+                                            </p>
+                                            <pre><code class="language-dart">Admost.trackIAPForAndroid(originalJSON, signature, currency, amount, ['tag1', 'tag2'])
                 </code></pre>
-                <p>Explanation and code samples of parameters:</p>
-                <ul>
-                    <li><b>originalJSON</b> – a String in JSON format that contains details about the
-                        purchase order. It
-                        is returned by the operating system after you make the purchase call.
-                    </li>
-                    <li><b>signature</b> – String containing the signature of the purchase data that the
-                        developer
-                        signed with their private key. It is returned by the operating system after you make the
-                        purchase call.
-                    </li>               
-                    <li><b>currency</b> – Currency code of transaction.	</li>
-                    <li><b>amount</b> – Amount of transaction.</li>
-                     <li><b>tags</b> – You can use the purchases to be analyzed and differentiated.</li>
-                </ul>
+                                            <p>Explanation and code samples of parameters:</p>
+                                            <ul>
+                                                <li><b>originalJSON</b> – a String in JSON format that contains details
+                                                    about the
+                                                    purchase order. It
+                                                    is returned by the operating system after you make the purchase
+                                                    call.
+                                                </li>
+                                                <li><b>signature</b> – String containing the signature of the purchase
+                                                    data that the
+                                                    developer
+                                                    signed with their private key. It is returned by the operating
+                                                    system after you make the
+                                                    purchase call.
+                                                </li>
+                                                <li><b>currency</b> – Currency code of transaction. </li>
+                                                <li><b>amount</b> – Amount of transaction.</li>
+                                                <li><b>tags</b> – You can use the purchases to be analyzed and
+                                                    differentiated.</li>
+                                            </ul>
 
-                <h3 id="senduserid">Setting Application User Id </h3>
+                                            <h3 id="senduserid">Setting Application User Id </h3>
 
-                <p>
-                    You can use the following method to set application specific user id in Admost Analytics for enhanced tracking of your users. You should to call this method before initialization.
-                </p>
+                                            <p>
+                                                You can use the following method to set application specific user id in
+                                                Admost Analytics for enhanced tracking of your users. You should to call
+                                                this method before initialization.
+                                            </p>
 
-				<pre><code class="language-dart">
+                                            <pre><code class="language-dart">
                     Admost.setUserId("applicationUserId");
                 </code></pre>
 
 
-                <h3 id="adjustintegration">Adjust Integration</h3>
-                <p>
-                    Follow the official <a target="_blank" href="https://github.com/adjust/flutter_sdk#qs-getting-started">ADJUST</a> documents to integrate
-                AdjustSDK in to your app.
-                </p>
+                                            <h3 id="adjustintegration">Adjust Integration</h3>
+                                            <p>
+                                                Follow the official <a target="_blank"
+                                                    href="https://github.com/adjust/flutter_sdk#qs-getting-started">ADJUST</a>
+                                                documents to integrate
+                                                AdjustSDK in to your app.
+                                            </p>
 
-               
 
 
-                <h3 id="appsflyerintegration">AppsFlyer Integration </h3>
-                <p>
-                    Follow the official <a target="_blank" href="https://support.appsflyer.com/hc/en-us/articles/360002691537-Flutter-plugin">APPSFLYER</a> documents to integrate
-                AppsFlyerSDK in to your app.
-                </p>
 
-                
-                <h3 id="privacycheck">Privacy Consent Required </h3>
+                                            <h3 id="appsflyerintegration">AppsFlyer Integration </h3>
+                                            <p>
+                                                Follow the official <a target="_blank"
+                                                    href="https://support.appsflyer.com/hc/en-us/articles/360002691537-Flutter-plugin">APPSFLYER</a>
+                                                documents to integrate
+                                                AppsFlyerSDK in to your app.
+                                            </p>
 
-                <p>
-                    You can optionally use isPrivacyConsentRequired property to obtain the user is in a GDPR or CCPA required country.
-                </p>
 
-				<pre><code class="language-dart">
-var privacyConsentStatus = await Admost.isPrivacyConsentRequired;
+                                            <h3 id="privacycheck">Privacy Consent Required </h3>
+
+                                            <p>
+                                                You can optionally use isPrivacyConsentRequired property to obtain the
+                                                user is in a GDPR or CCPA required country.
+                                            </p>
+
+                                            <pre><code class="language-dart">
+        var privacyConsentStatus = await Admost.isPrivacyConsentRequired;
                 </code></pre>
 
-               
-                <h3 id="appprivacy">Apple App Privacy (IOS Only)</h3>
 
-                <p>                
-Starting December 8, 2020, Apple has announced a privacy disclosure for the App Store, You must define which data are collected by your apps and any SDKs you have integrated. To improve the performance of AdMost, the AMRSDK may collect following information from your apps:
-                </p>
+                                            <h3 id="appprivacy">Apple App Privacy (IOS Only)</h3>
 
-                <ul>
-                    <li><b>User ID</b> – If you are using <code>setUserId</code> method to identify users with your custom app user ID, you will need to select 'User ID'
-                    </li>
-                    <li><b>Purchases</b> – If you are using in app purchase trackings methods, you will need to select 'Purchases'
-                    </li>
-                    <li><b>Coarse Location</b> – To estimate the general location of a device
-                    </li>
-                    <li><b>Product Interaction</b> – Analytics purposes
-                    </li>
-                    <li><b>Advertising Data</b> – Analytics purposes
-                    </li>
-                </ul>
+                                            <p>
+                                                Starting December 8, 2020, Apple has announced a privacy disclosure for
+                                                the App Store, You must define which data are collected by your apps and
+                                                any SDKs you have integrated. To improve the performance of AdMost, the
+                                                AMRSDK may collect following information from your apps:
+                                            </p>
 
-            </section>
-        </article>
-        <!-- END Main content -->
-    </div>
-</main>
+                                            <ul>
+                                                <li><b>User ID</b> – If you are using <code>setUserId</code> method to
+                                                    identify users with your custom app user ID, you will need to select
+                                                    'User ID'
+                                                </li>
+                                                <li><b>Purchases</b> – If you are using in app purchase trackings
+                                                    methods, you will need to select 'Purchases'
+                                                </li>
+                                                <li><b>Coarse Location</b> – To estimate the general location of a
+                                                    device
+                                                </li>
+                                                <li><b>Product Interaction</b> – Analytics purposes
+                                                </li>
+                                                <li><b>Advertising Data</b> – Analytics purposes
+                                                </li>
+                                            </ul>
+
+                </section>
+            </article>
+            <!-- END Main content -->
+        </div>
+    </main>
 
 
-<!-- Footer -->
-<footer class="site-footer">
-    <div class="container">
-        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
 
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <p>Copyright &copy; 2017. All right reserved</p>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <ul class="footer-menu">
-                    <li><a href="http://admost.github.io/amrandroid">Android integration</a></li>
-                    <li><a href="http://admost.github.io/amrios">iOS Integration</a></li>
-                    <li><a href="mailto:amr@admost.com">Contact us</a></li>
-                </ul>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <p>Copyright &copy; 2017. All right reserved</p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <ul class="footer-menu">
+                        <li><a href="http://admost.github.io/amrandroid">Android integration</a></li>
+                        <li><a href="http://admost.github.io/amrios">iOS Integration</a></li>
+                        <li><a href="mailto:amr@admost.com">Contact us</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<!-- END Footer -->
+    </footer>
+    <!-- END Footer -->
 
-<!-- Scripts -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script>
-    window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
-</script>
-<script>function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-}
-</script>
-<script>
-amrInitPage();
-</script>
-<script src="assets/js/theDocs.all.min.js"></script>
-<script src="assets/js/custom.js"></script>
+    <!-- Scripts -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>
+        window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+        checkPageStatus()
+    </script>
+    <script>function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+    </script>
+    <script>
+        amrInitPage();
+    </script>
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/custom.js"></script>
 
 </body>
 </html>
