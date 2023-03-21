@@ -52,7 +52,7 @@ function combineDatas() {
             }
         }
 
-        var el = dataIOS.adNetworks.find((value, index) => value.network.includes(element.name));
+        var el = dataIOS.adNetworks.find((value, index) => value.displayName.toUpperCase(element.name));
 
         if (typeof el != "undefined") {
 
@@ -323,7 +323,6 @@ function fillAdNetworkList() {
             return;
         }
 
-        console.log(element.isLite)
         if (pageIsLite === false || (pageIsLite === true && element.isLite)) {
             var iosButton = '<td class="text-right"></td>';
             var androidButton = '<td class="text-right"></td>';;
